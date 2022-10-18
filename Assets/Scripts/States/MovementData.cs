@@ -8,7 +8,6 @@ public class MovementData : MonoBehaviour
     public Vector2 currentVelocity;
     public Vector2 movementLastDirection { get; private set; }
     public Vector2 movementDirectionNormalized { get; private set; }
-    public Vector2 movementDirectionDiscrete { get; private set; }
 
     private Vector2 _agentMovement;
     public Vector2 agentMovement {
@@ -17,7 +16,6 @@ public class MovementData : MonoBehaviour
             _agentMovement = value;
             CalculateMovementLastDirection();
             CalculateMovementDirectionNormalized();
-            CalculateMovementDirectionDiscrete();
         }
     }
 
@@ -42,14 +40,5 @@ public class MovementData : MonoBehaviour
     void CalculateMovementDirectionNormalized()
     {
         movementDirectionNormalized = new Vector2(agentMovement.x, agentMovement.y).normalized;
-    }
-
-    void CalculateMovementDirectionDiscrete()
-    {
-        int x = Mathf.RoundToInt(agentMovement.x);
-        int y = x == 0 ? Mathf.RoundToInt(agentMovement.y) : 0;
-        movementDirectionDiscrete = new Vector2(x, y);
-
-        Debug.Log($"CalculateMovementDirectionDiscrete({movementDirectionDiscrete})");
     }
 }

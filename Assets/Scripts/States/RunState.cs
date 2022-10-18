@@ -8,6 +8,7 @@ public class RunState : State
 {
     [SerializeField] private UnityEvent OnStep;
 
+    Vector2 inputDirection;
     Vector2 movementDirection;
 
     public override StateType Type()
@@ -18,7 +19,7 @@ public class RunState : State
     protected override void EnterState()
     {
         agent.animationManager.PlayAnimation(AnimationType.run);
-        movementDirection = agent.movementData.movementDirectionDiscrete;
+        movementDirection = MovementUtils.DirectionDiscrete(agent.movementData.agentMovement);
         MoveToCell();
     }
 
@@ -32,21 +33,23 @@ public class RunState : State
         DOTween.Kill(agent.transform);
 
         Vector2 nextPosition = GridUtils.CellPositionInDirection(agent.transform.position, movementDirection);
-        // Debug.Log($"MoveToCell({nextPosition})");
+
         agent.transform
             .DOMove(nextPosition, agent.agentData.maxSpeed)
             .OnComplete(MovementFinished)
             .SetEase(Ease.Linear)
             .SetSpeedBased();
-            // .SetUpdate(UpdateType.Late);
     }
 
     void MovementFinished()
     {
-        if(movementDirection.magnitude == 0f)
+        if(inputDirection.magnitude == 0f)
             agent.stateManager.TransitionToState(StateType.Idle);
         else
-            NextCell();
+        {
+            movementDirection = inputDirection;
+            MoveToCell();
+        }
     }
 
     protected override void HandleAnimationAction()
@@ -70,18 +73,17 @@ public class RunState : State
 
     protected override void HandleMovement(Vector2 movement)
     {
-        // if(movement.x == movementDirection.x || movement.y == movementDirection.y)
-        // {
+        inputDirection = MovementUtils.DirectionDiscrete(movement);
+        Debug.Log($"HandelMovement({inputDirection}, {movementDirection})");
 
-        // }
-
-        movementDirection = agent.movementData.movementDirectionDiscrete;
-        NextCell();
-    }
-
-    void NextCell()
-    {
-        if(movementDirection.magnitude > 0f)
+        if(
+            inputDirection.magnitude > 0 &&
+            ( movementDirection.x == inputDirection.x || movementDirection.y == inputDirection.y )
+        )
+        {
+            Debug.Log("ChangingDirection");
+            movementDirection = inputDirection;
             MoveToCell();
+        }
     }
 }
