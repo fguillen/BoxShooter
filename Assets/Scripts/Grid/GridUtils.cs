@@ -6,7 +6,7 @@ public static class GridUtils
     {
         float gridSize = GameManager.instance.gameConfiguration.gridSize;
         Vector2 result = CellPositionByPosition(actualPosition + (direction * gridSize));
-        Debug.Log($"GridUtils.CellPositionInDirection({actualPosition}, {direction}): {result}");
+        // Debug.Log($"GridUtils.CellPositionInDirection({actualPosition}, {direction}): {result}");
 
         return result;
     }
@@ -18,7 +18,7 @@ public static class GridUtils
         Vector2 cellIndex = CellIndexByPosition(position);
         Vector2 result = CellPositionByIndex(cellIndex);
 
-        Debug.Log($"GridUtils.CellPosition({position}): {result}");
+        // Debug.Log($"GridUtils.CellPosition({position}): {result}");
 
         return result;
     }
@@ -36,7 +36,7 @@ public static class GridUtils
         Vector2 result = position / gridSize;
         result = new Vector2(Mathf.Ceil(result.x), Mathf.Ceil(result.y));
 
-        Debug.Log($"GridUtils.CellIndexByPosition({position}): {result}");
+        // Debug.Log($"GridUtils.CellIndexByPosition({position}): {result}");
 
         return result;
     }

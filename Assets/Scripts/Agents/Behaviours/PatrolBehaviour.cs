@@ -1,3 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
+
+using System.Linq;
 using UnityEngine;
 
 
@@ -7,9 +11,19 @@ namespace AI
     {
         [SerializeField] float waitingTimeMax = 5f;
 
-        Vector2 currentMovement;
+        Vector2 currentDirection;
         bool waiting = false;
+        List<Vector2> directions;
 
+
+        void Awake()
+        {
+            directions = new List<Vector2>();
+            directions.Add(new Vector2(0f, 1f));
+            directions.Add(new Vector2(1f, 0f));
+            directions.Add(new Vector2(0f, -1f));
+            directions.Add(new Vector2(-1f, 0f));
+        }
 
         public override void PostInitialize()
         {
@@ -22,8 +36,8 @@ namespace AI
             if(waiting)
                 return;
 
-            if(agent.movementData.agentMovement != currentMovement)
-                agent.agentInput.CallMovement(currentMovement);
+            if(agent.movementData.agentMovement != currentDirection)
+                agent.agentInput.CallMovement(currentDirection);
 
             if(agent.wallInFrontSensor.HasHit())
                 WallInFront();
@@ -31,12 +45,15 @@ namespace AI
 
         void InitCurrentMovement()
         {
-            currentMovement = new Vector2((Random.value > 0.5f ? 1f : -1f), 0f);
+            currentDirection = directions[Random.Range(0, directions.Count)];
         }
 
         void Turn()
         {
-            currentMovement *= new Vector2(-1f, 1f);
+            List<Vector2> directionsWithWall = agent.wallInAllDirectionsSensor.GetDirectionsWithHit();
+            List<Vector2> possibleDirections = directions.Where( e => !directionsWithWall.Contains(e) ).ToList();
+            currentDirection = possibleDirections[Random.Range(0, possibleDirections.Count)];
+            Debug.Log($"Turn().currentDirection: {possibleDirections} -> {currentDirection}");
         }
 
         void WallInFront()

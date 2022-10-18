@@ -10,6 +10,7 @@ public class RunState : State
 
     Vector2 inputDirection;
     Vector2 movementDirection;
+    Vector2 nextPosition;
 
     public override StateType Type()
     {
@@ -32,7 +33,7 @@ public class RunState : State
     {
         DOTween.Kill(agent.transform);
 
-        Vector2 nextPosition = GridUtils.CellPositionInDirection(agent.transform.position, movementDirection);
+        nextPosition = GridUtils.CellPositionInDirection(agent.transform.position, movementDirection);
 
         agent.transform
             .DOMove(nextPosition, agent.agentData.maxSpeed)
@@ -54,7 +55,6 @@ public class RunState : State
 
     protected override void HandleAnimationAction()
     {
-        Debug.Log($"HandleAnimationAction()");
         OnStep?.Invoke();
     }
 
@@ -74,16 +74,22 @@ public class RunState : State
     protected override void HandleMovement(Vector2 movement)
     {
         inputDirection = MovementUtils.DirectionDiscrete(movement);
-        Debug.Log($"HandelMovement({inputDirection}, {movementDirection})");
+        Debug.Log($"RunState.HandelMovement({inputDirection})");
 
         if(
             inputDirection.magnitude > 0 &&
             ( movementDirection.x == inputDirection.x || movementDirection.y == inputDirection.y )
         )
         {
-            Debug.Log("ChangingDirection");
+            Debug.Log("RunState.ChangingDirection");
             movementDirection = inputDirection;
             MoveToCell();
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(nextPosition, 0.1f);
     }
 }

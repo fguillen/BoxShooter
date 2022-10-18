@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MiniRexAgentData
   m_EditorClassIdentifier: 
   maxHealth: 8
-  maxSpeed: 1
+  maxSpeed: 2
   acceleration: 50
   deceleration: 50
   jumpForce: 0
