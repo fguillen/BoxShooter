@@ -48,7 +48,7 @@ public class RunState : State
 
     void CalculateSpeed()
     {
-        if(Mathf.Abs(agent.movementData.agentMovement.x) > 0f)
+        if(Mathf.Abs(agent.movementData.movementDirectionNormalized.magnitude) > 0f)
             agent.movementData.currentSpeed += agent.agentData.acceleration * Time.deltaTime;
         else
             agent.movementData.currentSpeed -= agent.agentData.deceleration * Time.deltaTime;
@@ -58,7 +58,7 @@ public class RunState : State
 
     void CalculateVelocity()
     {
-        agent.movementData.currentVelocity = new Vector2(agent.movementData.movementLastDirection.x * agent.movementData.currentSpeed, agent.rb2d.velocity.y);
+        agent.movementData.currentVelocity = agent.movementData.movementDirectionNormalized * agent.movementData.currentSpeed;
     }
 
     protected override void HandleJumpPressed()

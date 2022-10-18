@@ -6,7 +6,7 @@
             "id": "e87420c8-e7e9-47ac-818e-58d0ef3e699b",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "InputMove",
                     "type": "Value",
                     "id": "3904f728-5fda-4093-bdcb-5431d7e264e8",
                     "expectedControlType": "Vector2",
@@ -15,13 +15,22 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Fire",
-                    "type": "Button",
+                    "name": "InputAttack",
+                    "type": "Value",
                     "id": "3559ee81-ae59-4b0a-a323-3a79f40ecc85",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "InputJump",
+                    "type": "Value",
+                    "id": "50f09ee6-32a2-4fb8-98c7-7651515b32e8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -32,7 +41,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -43,7 +52,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -54,7 +63,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -65,7 +74,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -76,7 +85,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -87,7 +96,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -98,7 +107,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -109,7 +118,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -120,7 +129,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -131,7 +140,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "InputMove",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -142,7 +151,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Fire",
+                    "action": "InputAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -153,7 +162,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Fire",
+                    "action": "InputAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78abb792-a136-47d6-9bbc-cc0657a566a1",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "InputJump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

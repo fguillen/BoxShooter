@@ -9,14 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6339d38e725cb40d5be650357a18edf2, type: 3}
-  m_Name: PlayerAgentData
+  m_Script: {fileID: 11500000, guid: 90031182bbb3848c0b70583aa05e2eb4, type: 3}
+  m_Name: GameConfiguration
   m_EditorClassIdentifier: 
-  maxHealth: 8
-  maxSpeed: 6
-  acceleration: 50
-  deceleration: 50
-  jumpForce: 0
-  lowJumpForce: 0
-  fallForce: 0
-  climbSpeed: 0
+  cellSize: 1
