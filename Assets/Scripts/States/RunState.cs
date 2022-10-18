@@ -19,7 +19,7 @@ public class RunState : State
     protected override void EnterState()
     {
         agent.animationManager.PlayAnimation(AnimationType.run);
-        movementDirection = MovementUtils.DirectionDiscrete(agent.movementData.agentMovement);
+        HandleMovement(MovementUtils.DirectionDiscrete(agent.movementData.agentMovement));
         MoveToCell();
     }
 
