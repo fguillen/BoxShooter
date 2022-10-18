@@ -17,6 +17,6 @@ public class SpriteFlipper : MonoBehaviour
 
         float newScaleX = (direction.x < 0f) ? (-1 * originalScaleX) : originalScaleX;
 
-        transform.parent.localScale = new Vector3(newScaleX, transform.parent.localScale.y, transform.parent.localScale.z);
+        transform.localScale = new Vector3(newScaleX, transform.parent.localScale.y, transform.parent.localScale.z);
     }
 }

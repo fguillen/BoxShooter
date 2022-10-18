@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using WeaponSystem;
 using Sensors;
@@ -23,6 +24,8 @@ public class Agent : MonoBehaviour
 
     SpriteFlipper spriteFlipper;
 
+    List<RotatorTowardsDirection> rotatorsTowardsDirection;
+
     [SerializeField] public MovementData movementData;
     [SerializeField] public AgentDataSO agentData;
     [SerializeField] public StateType originalState;
@@ -40,6 +43,8 @@ public class Agent : MonoBehaviour
         playerInAreaSensor = GetComponentInChildren<PlayerInAreaSensor>();
         endOfGroundSensor = GetComponentInChildren<EndOfGroundSensor>();
 
+        rotatorsTowardsDirection = GetComponentsInChildren<RotatorTowardsDirection>().ToList();
+
         weaponManager = GetComponentInChildren<WeaponManager>();
         stateManager = GetComponentInChildren<StateManager>();
         damageManager = GetComponentInChildren<DamageManager>();
@@ -52,6 +57,10 @@ public class Agent : MonoBehaviour
     {
         agentInput.OnMovement += HandleMovement;
         agentInput.OnMovement += spriteFlipper.FaceDirection;
+
+        foreach (var rotator in rotatorsTowardsDirection)
+            agentInput.OnMovement += rotator.Rotate;
+
         agentInput.OnWeaponChange += weaponManager.HandleWeaponChange;
         Initialize();
     }
@@ -82,6 +91,10 @@ public class Agent : MonoBehaviour
     {
         agentInput.OnMovement -= HandleMovement;
         agentInput.OnMovement -= spriteFlipper.FaceDirection;
+
+        foreach (var rotator in rotatorsTowardsDirection)
+            agentInput.OnMovement -= rotator.Rotate;
+
         agentInput.OnWeaponChange -= weaponManager.HandleWeaponChange;
 
         Destroy(transform.parent.gameObject);

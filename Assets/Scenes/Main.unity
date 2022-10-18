@@ -507,6 +507,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &526870139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7828327285404823098, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+  m_PrefabInstance: {fileID: 168760450125164457}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &526870141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 526870139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9462440941fc5444c8bf9b6846068eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0}
 --- !u!1 &580103282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1103,30 @@ PrefabInstance:
     - target: {fileID: 533736295859935534, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404088171719952648, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404088171719952648, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404088171719952648, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1404088171719952648, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252378945977440339, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+      propertyPath: gizmosColorNoObstacle.b
+      value: 0.02520442
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252378945977440339, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+      propertyPath: gizmosColorNoObstacle.g
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
