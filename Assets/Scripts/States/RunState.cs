@@ -49,11 +49,11 @@ public class RunState : State
             NextCell();
     }
 
-    // protected override void HandleAnimationAction()
-    // {
-    //     Debug.Log($"HandleAnimationAction()");
-    //     OnStep?.Invoke();
-    // }
+    protected override void HandleAnimationAction()
+    {
+        Debug.Log($"HandleAnimationAction()");
+        OnStep?.Invoke();
+    }
 
     // protected override void HandleAttack()
     // {
