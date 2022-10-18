@@ -3,24 +3,23 @@ using UnityEngine;
 
 namespace AI
 {
-    public class BehaviourPatrol : AgentBehaviour
+    public class PatrolBehaviour : AgentBehaviour
     {
         Vector2 currentMovement;
 
         public override void PostInitialize()
         {
-             InitCurrentMovement();
+            Debug.Log("PatrolBehaviour.PostInitialize()");
+            InitCurrentMovement();
         }
 
         public override void Perform()
         {
-            if(
-                agent.wallInFrontSensor.HasHit() ||
-                !agent.endOfGroundSensor.HasHit()
-            )
+            if(agent.wallInFrontSensor.HasHit())
                 Turn();
 
-            agent.agentInput.CallMovement(currentMovement);
+            if(agent.movementData.agentMovement != currentMovement)
+                agent.agentInput.CallMovement(currentMovement);
         }
 
         void InitCurrentMovement()
