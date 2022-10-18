@@ -30,7 +30,7 @@ public class RunState : State
     {
         DOTween.Kill(agent.transform);
 
-        nextPosition = MoveInGrid.CellPositionInDirection(agent.transform.position, agent.movementData.movementDirectionDiscrete);
+        nextPosition = GridUtils.CellPositionInDirection(agent.transform.position, agent.movementData.movementDirectionDiscrete);
         Debug.Log($"MoveToCell({nextPosition})");
         agent.transform
             .DOMove(nextPosition, agent.agentData.maxSpeed)
@@ -69,7 +69,7 @@ public class RunState : State
 
     protected override void HandleMovement(Vector2 movement)
     {
-        if(Mathf.Abs(movement.magnitude) > 0f)
+        if(movement.magnitude > 0f)
             MoveToCell();
     }
 }
