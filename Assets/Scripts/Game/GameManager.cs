@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameConfiguration gameConfiguration;
+    [SerializeField] public GameConfiguration gameConfiguration;
     public static GameManager instance;
 
     void Awake()

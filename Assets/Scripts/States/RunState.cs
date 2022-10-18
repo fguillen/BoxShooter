@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class RunState : State
 {
     [SerializeField] private UnityEvent OnStep;
+
+    Vector2 nextPosition;
 
     public override StateType Type()
     {
@@ -15,71 +18,58 @@ public class RunState : State
     protected override void EnterState()
     {
         agent.animationManager.PlayAnimation(AnimationType.run);
-
-        if(agent.rb2d.bodyType != RigidbodyType2D.Static)
-            agent.rb2d.velocity = Vector2.zero;
-
-        agent.movementData.currentSpeed = 0f;
-        agent.movementData.currentVelocity = Vector2.zero;
+        MoveToCell();
     }
 
-    public override void StateFixedUpdate()
+    protected override void ExitState()
     {
-        if(agent.groundSensor != null && !agent.groundSensor.IsGrounded())
-        {
-            agent.stateManager.TransitionToState(StateType.Fall);
-            return;
-        }
+        DOTween.Kill(agent.transform);
+    }
 
-        SetPlayerVelocity();
+    void MoveToCell()
+    {
+        DOTween.Kill(agent.transform);
 
-        if(Mathf.Abs(agent.rb2d.velocity.x) < 0.01f)
+        nextPosition = MoveInGrid.CellPositionInDirection(agent.transform.position, agent.movementData.movementDirectionDiscrete);
+        Debug.Log($"MoveToCell({nextPosition})");
+        agent.transform
+            .DOMove(nextPosition, agent.agentData.maxSpeed)
+            .OnComplete(MovementFinished)
+            .SetEase(Ease.Linear)
+            .SetSpeedBased();
+            // .SetUpdate(UpdateType.Late);
+    }
+
+    void MovementFinished()
+    {
+        if(agent.movementData.agentMovement.magnitude == 0f)
             agent.stateManager.TransitionToState(StateType.Idle);
-    }
-
-    protected void SetPlayerVelocity()
-    {
-        CalculateSpeed();
-        CalculateVelocity();
-
-        if(agent.rb2d.bodyType != RigidbodyType2D.Static)
-            agent.rb2d.velocity = agent.movementData.currentVelocity;
-    }
-
-    void CalculateSpeed()
-    {
-        if(Mathf.Abs(agent.movementData.movementDirectionNormalized.magnitude) > 0f)
-            agent.movementData.currentSpeed += agent.agentData.acceleration * Time.deltaTime;
         else
-            agent.movementData.currentSpeed -= agent.agentData.deceleration * Time.deltaTime;
-
-        agent.movementData.currentSpeed = Mathf.Clamp(agent.movementData.currentSpeed, 0f, agent.agentData.maxSpeed);
-    }
-
-    void CalculateVelocity()
-    {
-        agent.movementData.currentVelocity = agent.movementData.movementDirectionNormalized * agent.movementData.currentSpeed;
-    }
-
-    protected override void HandleJumpPressed()
-    {
-        if(agent.groundSensor == null || agent.groundSensor.IsGrounded())
-            agent.stateManager.TransitionToState(StateType.Jump);
+            MoveToCell();
     }
 
     protected override void HandleAnimationAction()
     {
+        Debug.Log($"HandleAnimationAction()");
         OnStep?.Invoke();
     }
 
     protected override void HandleAttack()
     {
+        Debug.Log($"HandleAttack()");
         if(agent.weaponManager.CanAttack())
             agent.stateManager.TransitionToState(StateType.Attack);
     }
 
     protected override void HandleHitted(Vector2 point)
     {
+        Debug.Log($"HandleHitted()");
         agent.stateManager.TransitionToState(StateType.Hit);
+    }
+
+    protected override void HandleMovement(Vector2 movement)
+    {
+        if(Mathf.Abs(movement.magnitude) > 0f)
+            MoveToCell();
     }
 }

@@ -25,7 +25,6 @@ public class JumpState : RunState
     public override void StateFixedUpdate()
     {
         ApplyLowJumpModifier();
-        SetPlayerVelocity();
 
         if(agent.rb2d.velocity.y <= 0)
         {

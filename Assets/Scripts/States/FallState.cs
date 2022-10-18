@@ -33,7 +33,6 @@ public class FallState : RunState
     public override void StateFixedUpdate()
     {
         ApplyFallForce();
-        SetPlayerVelocity();
 
         if(agent.groundSensor.IsGrounded())
             agent.stateManager.TransitionToState(StateType.Idle);

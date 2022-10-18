@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90031182bbb3848c0b70583aa05e2eb4, type: 3}
   m_Name: GameConfiguration
   m_EditorClassIdentifier: 
-  cellSize: 1
+  gridSize: 4

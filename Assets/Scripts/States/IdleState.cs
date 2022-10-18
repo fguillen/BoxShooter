@@ -12,18 +12,12 @@ public class IdleState : State
     protected override void EnterState()
     {
         agent.animationManager.PlayAnimation(AnimationType.idle);
-
-        if(agent.rb2d.bodyType != RigidbodyType2D.Static)
-            if(agent.groundSensor == null || agent.groundSensor.IsGrounded())
-                agent.rb2d.velocity = Vector2.zero;
     }
 
     protected override void HandleMovement(Vector2 movement)
     {
-        if(Mathf.Abs(movement.x) > 0)
+        if(Mathf.Abs(movement.magnitude) > 0f)
             agent.stateManager.TransitionToState(StateType.Run);
-        else if(Mathf.Abs(movement.y) > 0 && agent.climbSensor.canClimb)
-            agent.stateManager.TransitionToState(StateType.Climb);
     }
 
     protected override void HandleAttack()
@@ -32,16 +26,9 @@ public class IdleState : State
             agent.stateManager.TransitionToState(StateType.Attack);
     }
 
-    public override void StateFixedUpdate()
-    {
-        if(agent.groundSensor != null && !agent.groundSensor.IsGrounded())
-            agent.stateManager.TransitionToState(StateType.Fall);
-    }
-
     protected override void HandleJumpPressed()
     {
-        if(agent.groundSensor == null || agent.groundSensor.IsGrounded())
-            agent.stateManager.TransitionToState(StateType.Jump);
+        agent.stateManager.TransitionToState(StateType.Jump);
     }
 
     protected override void HandleHitted(Vector2 point)

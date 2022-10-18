@@ -6,6 +6,7 @@ public class PlayerInputWrapper : AgentInput
     public void OnInputMove(InputValue value)
     {
         var direction = value.Get<Vector2>();
+        Debug.Log($"OnInputMove({direction})");
         CallMovement(direction);
     }
 
