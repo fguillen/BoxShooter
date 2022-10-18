@@ -53,6 +53,8 @@ namespace Sensors
             if(!drawGizmos)
                 return;
 
+            CheckHit();
+
             if(hasHit)
                 Gizmos.color = gizmosColorObstacle;
             else
