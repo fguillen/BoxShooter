@@ -73,7 +73,5 @@ namespace AI
             waiting = false;
             Turn();
         }
-
-
     }
 }

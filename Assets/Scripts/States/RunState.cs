@@ -21,7 +21,7 @@ public class RunState : State
     {
         agent.animationManager.PlayAnimation(AnimationType.run);
         HandleMovement(MovementUtils.DirectionDiscrete(agent.movementData.agentMovement));
-        MoveToCell();
+        // MoveToCell();
     }
 
     protected override void ExitState()
@@ -34,6 +34,8 @@ public class RunState : State
         DOTween.Kill(agent.transform);
 
         nextPosition = GridUtils.CellPositionInDirection(agent.transform.position, movementDirection);
+
+        Debug.Log($"RunState.MoveToCell.nextPosition: {nextPosition}");
 
         agent.transform
             .DOMove(nextPosition, agent.agentData.maxSpeed)
@@ -74,12 +76,12 @@ public class RunState : State
     protected override void HandleMovement(Vector2 movement)
     {
         inputDirection = MovementUtils.DirectionDiscrete(movement);
-        Debug.Log($"RunState.HandelMovement({inputDirection})");
 
-        if(
-            inputDirection.magnitude > 0 &&
-            ( movementDirection.x == inputDirection.x || movementDirection.y == inputDirection.y )
-        )
+        if(inputDirection.magnitude == 0)
+            return;
+
+        Vector2 possibleNextPosition = GridUtils.CellPositionInDirection(agent.transform.position, inputDirection);
+        if(Vector2Utils.AngleBetweenVectorsIs90DegreesMultiple(agent.transform.position, possibleNextPosition))
         {
             Debug.Log("RunState.ChangingDirection");
             movementDirection = inputDirection;
