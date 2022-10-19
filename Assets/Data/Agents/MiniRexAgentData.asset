@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6339d38e725cb40d5be650357a18edf2, type: 3}
   m_Name: MiniRexAgentData
   m_EditorClassIdentifier: 
-  maxHealth: 8
+  maxHealth: 1
   maxSpeed: 1
-  acceleration: 50
-  deceleration: 50
+  acceleration: 0
+  deceleration: 0
+  waitingTimeMax: 5
   jumpForce: 0
   lowJumpForce: 0
   fallForce: 0

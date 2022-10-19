@@ -19,8 +19,7 @@ public class DieState : State
     {
         agent.animationManager.PlayAnimation(AnimationType.die);
 
-        if(agent.rb2d.bodyType != RigidbodyType2D.Static)
-            agent.rb2d.velocity = new Vector2(0f, agent.rb2d.velocity.y);
+        agent.rb2d.velocity = Vector2.zero;
 
         OnDie?.Invoke();
         hitCollider.enabled = false;
