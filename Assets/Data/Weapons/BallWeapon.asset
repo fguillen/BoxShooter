@@ -18,7 +18,7 @@ MonoBehaviour:
   soundEffect: {fileID: 0}
   hittableMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   range: 4
   speed: 8
   weaponPrefab: {fileID: 4079167418700097322, guid: e8527e8612d1044d9bc5a54083435597, type: 3}
