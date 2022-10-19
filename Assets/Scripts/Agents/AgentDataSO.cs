@@ -13,6 +13,7 @@ public class AgentDataSO : ScriptableObject
     public float maxSpeed = 6f;
     public float acceleration = 50f;
     public float deceleration = 50f;
+    public float waitingTimeMax = 5f;
 
     [Header("Jump Data")]
     [Space]

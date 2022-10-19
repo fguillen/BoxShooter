@@ -9,8 +9,6 @@ namespace AI
 {
     public class PatrolBehaviour : AgentBehaviour
     {
-        [SerializeField] float waitingTimeMax = 5f;
-
         Vector2 currentDirection;
         bool waiting = false;
         List<Vector2> directions;
@@ -61,7 +59,7 @@ namespace AI
             Debug.Log($"WallInFront()");
             waiting = true;
             agent.agentInput.CallMovement(Vector2.zero);
-            float waitingTime = Random.Range(0f, waitingTimeMax);
+            float waitingTime = Random.Range(0f, agent.agentData.waitingTimeMax);
             Debug.Log($"WallInFront().waitingTime: {waitingTime}");
 
             Invoke("ContinueMoving", waitingTime);
