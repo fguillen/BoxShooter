@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: PlayerAgentData
   m_EditorClassIdentifier: 
   maxHealth: 8
-  maxSpeed: 3
+  maxSpeed: 2
   acceleration: 50
   deceleration: 50
+  waitingTimeMax: 5
   jumpForce: 0
   lowJumpForce: 0
   fallForce: 0
