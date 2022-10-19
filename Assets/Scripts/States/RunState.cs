@@ -9,8 +9,8 @@ public class RunState : State
     [SerializeField] private UnityEvent OnStep;
 
     Vector2 inputDirection;
-    Vector2 movementDirection;
     Vector2 nextPosition;
+    bool moving = false;
 
     public override StateType Type()
     {
@@ -20,13 +20,16 @@ public class RunState : State
     protected override void EnterState()
     {
         agent.animationManager.PlayAnimation(AnimationType.run);
-        HandleMovement(agent.movementData.agentMovement);
+
+        if(moving)
+            SetNextPosition(nextPosition);
+        else
+            HandleMovement(agent.movementData.agentMovement);
+
+        moving = true;
+
         // MoveToCell();
     }
-
-    // protected override void ExitState()
-    // {
-    // }
 
     public override void StateUpdate()
     {
@@ -34,28 +37,15 @@ public class RunState : State
             NextPositionArrived();
     }
 
-    // void MoveToCell()
-    // {
-    //     DOTween.Kill(agent.rb2d);
-
-
-    //     nextPosition = GridUtils.CellPositionInDirection(agent.transform.position, movementDirection);
-
-    //     Debug.Log($"RunState.MoveToCell.nextPosition: {nextPosition}");
-
-    //     agent.rb2d
-    //         .DOMove(nextPosition, agent.agentData.maxSpeed)
-    //         .OnComplete(MovementFinished)
-    //         .SetEase(Ease.Linear)
-    //         .SetSpeedBased();
-    // }
-
     void NextPositionArrived()
     {
         agent.rb2d.MovePosition(nextPosition);
 
         if(agent.wallInFrontSensor.HasHit() || inputDirection.magnitude == 0f)
+        {
+            moving = false;
             agent.stateManager.TransitionToState(StateType.Idle);
+        }
         else
             HandleMovement(agent.movementData.agentMovement);
     }
@@ -65,12 +55,12 @@ public class RunState : State
     //     OnStep?.Invoke();
     // }
 
-    // protected override void HandleAttack()
-    // {
-    //     Debug.Log($"HandleAttack()");
-    //     if(agent.weaponManager.CanAttack())
-    //         agent.stateManager.TransitionToState(StateType.Attack);
-    // }
+    protected override void HandleAttack()
+    {
+        Debug.Log($"RunState.HandleAttack()");
+        if(agent.weaponManager.CanAttack())
+            agent.stateManager.TransitionToState(StateType.Attack);
+    }
 
     // protected override void HandleHitted(Vector2 point)
     // {
@@ -94,14 +84,14 @@ public class RunState : State
             Vector2Utils.AngleBetweenVectorsIs90DegreesMultiple(agent.transform.position, possibleNextPosition)
         )
         {
-            ChangeNextPosition(possibleNextPosition);
+            SetNextPosition(possibleNextPosition);
             // MoveToCell();
         }
     }
 
-    void ChangeNextPosition(Vector2 position)
+    void SetNextPosition(Vector2 position)
     {
-        // Debug.Log($"RunState.ChangeNextPosition: {position}");
+        // Debug.Log($"RunState.SetNextPosition: {position}");
         nextPosition = position;
         Vector2 direction = Vector2Utils.DirectionBetweenVectors(agent.transform.position, position).normalized;
         agent.rb2d.velocity = direction * agent.agentData.maxSpeed;
