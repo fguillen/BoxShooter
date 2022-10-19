@@ -347,8 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06bf28cd6755b4dc08bd1373b8fc9fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 10
-  columns: 10
+  rows: 12
+  columns: 19
   cellPrefab: {fileID: 3904985237749594117, guid: 2b7c4f154004641f693b570d972df090, type: 3}
 --- !u!4 &141880592
 Transform:
@@ -844,7 +844,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
