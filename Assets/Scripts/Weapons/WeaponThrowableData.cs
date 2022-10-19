@@ -10,6 +10,7 @@ namespace WeaponSystem
         [SerializeField] public float range = 10f;
         [SerializeField] public float speed = 2f;
         [SerializeField] GameObject weaponPrefab;
+        [SerializeField] public GameObject explosionPrefab;
 
         public override bool CanBeUsed(Agent agent)
         {

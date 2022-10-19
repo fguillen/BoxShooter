@@ -79,6 +79,8 @@ namespace WeaponSystem
 
         void DestroyObject()
         {
+            Debug.Log("Projectile.DestroyObject()");
+            Instantiate(data.explosionPrefab, transform.position, Quaternion.identity);
             DOTween.Kill(transform);
             Destroy(gameObject);
         }
