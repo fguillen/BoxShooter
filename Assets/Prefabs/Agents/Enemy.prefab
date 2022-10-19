@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 11400000, guid: 664519b5b710748869237e18ff879aad, type: 2}
+  - {fileID: 11400000, guid: 969b1631273fc47c692306699720a4b2, type: 2}
 --- !u!114 &378224206597240458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +209,10 @@ PrefabInstance:
     - target: {fileID: 7789505558502251822, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Name
       value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824361752212366794, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: objectiveLayerMask.m_Bits
+      value: 263168
       objectReference: {fileID: 0}
     - target: {fileID: 8063797551481350614, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_IsActive

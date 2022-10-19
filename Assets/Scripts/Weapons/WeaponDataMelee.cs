@@ -11,7 +11,7 @@ namespace WeaponSystem
 
         public override bool CanBeUsed(Agent agent)
         {
-            return agent.stateManager.currentState.Type() == StateType.Fly || agent.groundSensor.IsGrounded();
+            return true;
         }
 
         public override void Attack(Agent agent)

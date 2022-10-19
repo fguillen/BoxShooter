@@ -9,8 +9,8 @@ namespace Sensors
     public class BoxSensor : MonoBehaviour
     {
         [SerializeField] bool drawGizmos;
-        [SerializeField] Color gizmosColor = Color.red;
-        [SerializeField] float gizmosSize = 0.2f;
+        [SerializeField] Color gizmosHitColor = Color.red;
+        [SerializeField] float gizmosHitSize = 0.2f;
         [SerializeField] LayerMask objectiveLayerMask;
         [SerializeField] List<string> tags;
         [SerializeField] bool selfCheck;
@@ -106,7 +106,7 @@ namespace Sensors
             if(!drawGizmos)
                 return;
 
-            Gizmos.color = gizmosColor;
+            Gizmos.color = gizmosHitColor;
 
             if(hasHit)
                 DrawGizmosHits();
@@ -116,7 +116,7 @@ namespace Sensors
         {
             foreach (var hit in hits)
             {
-                Gizmos.DrawSphere(hit.transform.position, gizmosSize);
+                Gizmos.DrawSphere(hit.transform.position, gizmosHitSize);
             }
         }
     }

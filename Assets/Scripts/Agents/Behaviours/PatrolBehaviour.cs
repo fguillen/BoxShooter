@@ -37,6 +37,9 @@ namespace AI
             if(agent.movementData.agentMovement != currentDirection)
                 agent.agentInput.CallMovement(currentDirection);
 
+            if(agent.playerInAreaSensor.HasHit())
+                PlayerDetected();
+
             if(agent.wallInFrontSensor.HasHit())
                 WallInFront();
         }
@@ -63,6 +66,11 @@ namespace AI
             // Debug.Log($"WallInFront().waitingTime: {waitingTime}");
 
             Invoke("ContinueMoving", waitingTime);
+        }
+
+        void PlayerDetected()
+        {
+            agent.agentInput.CallAttack();
         }
 
         void ContinueMoving()
