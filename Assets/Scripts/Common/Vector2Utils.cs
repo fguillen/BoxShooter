@@ -24,7 +24,21 @@ public static class Vector2Utils
     public static bool AngleBetweenVectorsIs90DegreesMultiple(Vector2 position1, Vector2 position2)
     {
         float angle = AngleBetweenVectors(position1, position2);
-        bool result = (angle % (Mathf.PI / 2) == 0);
+        float angleMod = angle % (Mathf.PI / 2);
+        bool result = angleMod == 0f;
+
+        // Debug.Log($"AngleBetweenVectorsIs90DegreesMultiple: {angle}, {angleMod}, {result}");
+
+        return result;
+    }
+
+    public static Vector2 DirectionDiscrete(Vector2 direction)
+    {
+        direction = direction.normalized;
+        int x = Mathf.RoundToInt(direction.x);
+        int y = x == 0 ? Mathf.RoundToInt(direction.y) : 0;
+        Vector2 result = new Vector2(x, y);
+        result = result.normalized;
 
         return result;
     }

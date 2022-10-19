@@ -31,5 +31,13 @@ namespace Sensors
 
             return result;
         }
+
+        public bool HasHitInDirection(Vector2 direction)
+        {
+            Vector2 directionDiscrete = Vector2Utils.DirectionDiscrete(direction);
+            List<Vector2> directionsWithHit = GetDirectionsWithHit();
+
+            return directionsWithHit.Contains(directionDiscrete);
+        }
     }
 }

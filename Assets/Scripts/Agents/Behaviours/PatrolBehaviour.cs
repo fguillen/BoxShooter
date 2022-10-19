@@ -25,7 +25,7 @@ namespace AI
 
         public override void PostInitialize()
         {
-            Debug.Log("PatrolBehaviour.PostInitialize()");
+            // Debug.Log("PatrolBehaviour.PostInitialize()");
             InitCurrentMovement();
         }
 
@@ -51,23 +51,23 @@ namespace AI
             List<Vector2> directionsWithWall = agent.wallInAllDirectionsSensor.GetDirectionsWithHit();
             List<Vector2> possibleDirections = directions.Where( e => !directionsWithWall.Contains(e) ).ToList();
             currentDirection = possibleDirections[Random.Range(0, possibleDirections.Count)];
-            Debug.Log($"Turn().currentDirection: {possibleDirections} -> {currentDirection}");
+            // Debug.Log($"Turn().currentDirection: {possibleDirections} -> {currentDirection}");
         }
 
         void WallInFront()
         {
-            Debug.Log($"WallInFront()");
+            // Debug.Log($"WallInFront()");
             waiting = true;
             agent.agentInput.CallMovement(Vector2.zero);
             float waitingTime = Random.Range(0f, agent.agentData.waitingTimeMax);
-            Debug.Log($"WallInFront().waitingTime: {waitingTime}");
+            // Debug.Log($"WallInFront().waitingTime: {waitingTime}");
 
             Invoke("ContinueMoving", waitingTime);
         }
 
         void ContinueMoving()
         {
-            Debug.Log("ContinueMoving");
+            // Debug.Log("ContinueMoving");
             waiting = false;
             Turn();
         }

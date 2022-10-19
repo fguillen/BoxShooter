@@ -20,45 +20,50 @@ public class RunState : State
     protected override void EnterState()
     {
         agent.animationManager.PlayAnimation(AnimationType.run);
-        HandleMovement(MovementUtils.DirectionDiscrete(agent.movementData.agentMovement));
+        HandleMovement(agent.movementData.agentMovement);
         // MoveToCell();
     }
 
-    protected override void ExitState()
+    // protected override void ExitState()
+    // {
+    // }
+
+    public override void StateUpdate()
     {
-        DOTween.Kill(agent.transform);
+        if((nextPosition - (Vector2)agent.transform.position).magnitude < 0.1f)
+            NextPositionArrived();
     }
 
-    void MoveToCell()
+    // void MoveToCell()
+    // {
+    //     DOTween.Kill(agent.rb2d);
+
+
+    //     nextPosition = GridUtils.CellPositionInDirection(agent.transform.position, movementDirection);
+
+    //     Debug.Log($"RunState.MoveToCell.nextPosition: {nextPosition}");
+
+    //     agent.rb2d
+    //         .DOMove(nextPosition, agent.agentData.maxSpeed)
+    //         .OnComplete(MovementFinished)
+    //         .SetEase(Ease.Linear)
+    //         .SetSpeedBased();
+    // }
+
+    void NextPositionArrived()
     {
-        DOTween.Kill(agent.transform);
+        agent.rb2d.MovePosition(nextPosition);
 
-        nextPosition = GridUtils.CellPositionInDirection(agent.transform.position, movementDirection);
-
-        Debug.Log($"RunState.MoveToCell.nextPosition: {nextPosition}");
-
-        agent.transform
-            .DOMove(nextPosition, agent.agentData.maxSpeed)
-            .OnComplete(MovementFinished)
-            .SetEase(Ease.Linear)
-            .SetSpeedBased();
-    }
-
-    void MovementFinished()
-    {
-        if(inputDirection.magnitude == 0f)
+        if(agent.wallInFrontSensor.HasHit() || inputDirection.magnitude == 0f)
             agent.stateManager.TransitionToState(StateType.Idle);
         else
-        {
-            movementDirection = inputDirection;
-            MoveToCell();
-        }
+            HandleMovement(agent.movementData.agentMovement);
     }
 
-    protected override void HandleAnimationAction()
-    {
-        OnStep?.Invoke();
-    }
+    // protected override void HandleAnimationAction()
+    // {
+    //     OnStep?.Invoke();
+    // }
 
     // protected override void HandleAttack()
     // {
@@ -75,18 +80,31 @@ public class RunState : State
 
     protected override void HandleMovement(Vector2 movement)
     {
-        inputDirection = MovementUtils.DirectionDiscrete(movement);
+        inputDirection = Vector2Utils.DirectionDiscrete(movement);
 
         if(inputDirection.magnitude == 0)
             return;
 
+        if(agent.wallInAllDirectionsSensor.HasHitInDirection(inputDirection))
+            return;
+
         Vector2 possibleNextPosition = GridUtils.CellPositionInDirection(agent.transform.position, inputDirection);
-        if(Vector2Utils.AngleBetweenVectorsIs90DegreesMultiple(agent.transform.position, possibleNextPosition))
+        if(
+            possibleNextPosition != nextPosition &&
+            Vector2Utils.AngleBetweenVectorsIs90DegreesMultiple(agent.transform.position, possibleNextPosition)
+        )
         {
-            Debug.Log("RunState.ChangingDirection");
-            movementDirection = inputDirection;
-            MoveToCell();
+            ChangeNextPosition(possibleNextPosition);
+            // MoveToCell();
         }
+    }
+
+    void ChangeNextPosition(Vector2 position)
+    {
+        // Debug.Log($"RunState.ChangeNextPosition: {position}");
+        nextPosition = position;
+        Vector2 direction = Vector2Utils.DirectionBetweenVectors(agent.transform.position, position).normalized;
+        agent.rb2d.velocity = direction * agent.agentData.maxSpeed;
     }
 
     void OnDrawGizmos()

@@ -76,7 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6b10d0dfb85425cb12d81f6371df95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitingTimeMax: 0
 --- !u!1 &533736295859935534
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,14 +162,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 533736295859935520}
     m_Modifications:
-    - target: {fileID: 7789505558182173894, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 67054549, guid: d0633c9c275f34dfeb31d0d0969496c9, type: 3}
-    - target: {fileID: 7789505558182173895, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 22100000, guid: af2c0196593534785b510b364abce852, type: 2}
     - target: {fileID: 7789505558502251808, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -215,10 +206,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7789505558502251809, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
-      propertyPath: agentData
-      value: 
-      objectReference: {fileID: 11400000, guid: c858b9d8a1efc422a9ac2c675e3e30d3, type: 2}
     - target: {fileID: 7789505558502251822, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Name
       value: Agent
