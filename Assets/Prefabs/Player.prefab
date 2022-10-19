@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 11400000, guid: 664519b5b710748869237e18ff879aad, type: 2}
+  - {fileID: 11400000, guid: 4d29d38ef1d864ac9bccd813123a3e61, type: 2}
 --- !u!114 &976042073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,6 +121,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3400507438895612200}
     m_Modifications:
+    - target: {fileID: 7789505558182173894, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 301310162, guid: 2d11dc6c7c5c54833a1290c158e6da1f, type: 3}
+    - target: {fileID: 7789505558182173894, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505558182173894, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -2014177579
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789505558182173895, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d1457f0a979814396941f82be805f3fd, type: 2}
     - target: {fileID: 7789505558502251808, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -165,6 +181,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7789505558502251809, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: agentData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1a2d5139e3a59479e856e0c25fb0b519, type: 2}
     - target: {fileID: 7789505558502251822, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Name
       value: Agent

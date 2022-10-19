@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000d516f287bf2a7d01eb8990827f5a4c34
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1613,10 +1613,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 3400507438895612198, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3400507438895612200, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1659,34 +1655,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3400507438895612200, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400507438895612201, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: weapons.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4d29d38ef1d864ac9bccd813123a3e61, type: 2}
-    - target: {fileID: 3400507438917893649, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400507438917893649, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3400507439333354462, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 301310162, guid: 2d11dc6c7c5c54833a1290c158e6da1f, type: 3}
-    - target: {fileID: 3400507439333354463, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d1457f0a979814396941f82be805f3fd, type: 2}
-    - target: {fileID: 3400507439653431865, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: agentData
-      value: 
-      objectReference: {fileID: 11400000, guid: 1a2d5139e3a59479e856e0c25fb0b519, type: 2}
-    - target: {fileID: 8757595628269625359, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
