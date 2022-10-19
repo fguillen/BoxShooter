@@ -1608,10 +1608,18 @@ PrefabInstance:
       propertyPath: weapons.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 4d29d38ef1d864ac9bccd813123a3e61, type: 2}
+    - target: {fileID: 3400507438917893649, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3400507438917893649, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3400507439333354462, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -475397377, guid: 2d11dc6c7c5c54833a1290c158e6da1f, type: 3}
+      objectReference: {fileID: 301310162, guid: 2d11dc6c7c5c54833a1290c158e6da1f, type: 3}
     - target: {fileID: 3400507439333354463, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: m_Controller
       value: 

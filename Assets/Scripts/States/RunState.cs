@@ -10,7 +10,6 @@ public class RunState : State
 
     Vector2 inputDirection;
     Vector2 nextPosition;
-    bool moving = false;
 
     public override StateType Type()
     {
@@ -21,12 +20,10 @@ public class RunState : State
     {
         agent.animationManager.PlayAnimation(AnimationType.run);
 
-        if(moving)
-            SetNextPosition(nextPosition);
-        else
+        if(agent.movementData.IsMoving())
             HandleMovement(agent.movementData.agentMovement);
 
-        moving = true;
+        SetNextPosition(nextPosition);
 
         // MoveToCell();
     }
@@ -43,7 +40,6 @@ public class RunState : State
 
         if(agent.wallInFrontSensor.HasHit() || inputDirection.magnitude == 0f)
         {
-            moving = false;
             agent.stateManager.TransitionToState(StateType.Idle);
         }
         else

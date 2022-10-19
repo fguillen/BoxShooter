@@ -49,7 +49,7 @@ public class FlyState : State
 
     void CalculateSpeed()
     {
-        if(Mathf.Abs(agent.movementData.agentMovement.magnitude) > 0f)
+        if(agent.movementData.IsMoving())
             agent.movementData.currentSpeed += agent.agentData.acceleration * Time.deltaTime;
         else
             agent.movementData.currentSpeed -= agent.agentData.deceleration * Time.deltaTime;

@@ -69,7 +69,12 @@ namespace WeaponSystem
 
         Vector2 Direction(Agent agent)
         {
-            return agent.movementData.movementLastDirection;
+            Vector2 direction = Vector2Utils.DirectionDiscrete(agent.movementData.movementLastDirection);
+
+            if(direction == Vector2.zero)
+                direction = Vector2.right;
+
+            return direction;
         }
 
         void DestroyObject()

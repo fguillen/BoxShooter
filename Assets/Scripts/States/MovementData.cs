@@ -21,24 +21,31 @@ public class MovementData : MonoBehaviour
 
     void CalculateMovementLastDirection()
     {
-        float x = movementLastDirection.x;
-        float y = movementLastDirection.y;
+        if(agentMovement.magnitude > 0f)
+            movementLastDirection = agentMovement;
+        // float x = movementLastDirection.x;
+        // float y = movementLastDirection.y;
 
-        if(agentMovement.x > 0)
-            x = 1;
-        else if(agentMovement.x < 0)
-            x = -1;
+        // if(agentMovement.x > 0)
+        //     x = 1;
+        // else if(agentMovement.x < 0)
+        //     x = -1;
 
-        if(agentMovement.y > 0)
-            y = 1;
-        else if(agentMovement.y < 0)
-            y = -1;
+        // if(agentMovement.y > 0)
+        //     y = 1;
+        // else if(agentMovement.y < 0)
+        //     y = -1;
 
-        movementLastDirection = new Vector2(x, y);
+        // movementLastDirection = new Vector2(x, y);
     }
 
     void CalculateMovementDirectionNormalized()
     {
         movementDirectionNormalized = new Vector2(agentMovement.x, agentMovement.y).normalized;
+    }
+
+    public bool IsMoving()
+    {
+        return agentMovement.magnitude > 0f;
     }
 }

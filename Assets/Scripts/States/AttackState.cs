@@ -29,7 +29,11 @@ public class AttackState : State
     protected override void HandleAnimationEnd()
     {
         agent.weaponManager.ToggleWeaponVisibility(false);
-        agent.stateManager.TransitionToPreviousState();
+
+        if(agent.movementData.IsMoving())
+            agent.stateManager.TransitionToState(StateType.Run);
+        else
+            agent.stateManager.TransitionToPreviousState();
     }
 
     protected override void HandleHitted(Vector2 point)
