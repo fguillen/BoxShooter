@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8081296437668742798}
   - component: {fileID: 4065331902160283918}
-  m_Layer: 15
+  m_Layer: 12
   m_Name: RaySensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

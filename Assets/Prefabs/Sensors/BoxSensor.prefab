@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8081296437668742798}
   - component: {fileID: 6261960506457834599}
   - component: {fileID: 5748883114325318861}
-  m_Layer: 19
+  m_Layer: 12
   m_Name: BoxSensor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawGizmos: 1
-  gizmosColor: {r: 1, g: 0, b: 0.9685755, a: 1}
-  gizmosSize: 0.2
+  gizmosHitColor: {r: 1, g: 0, b: 0, a: 1}
+  gizmosHitSize: 0.2
   objectiveLayerMask:
     serializedVersion: 2
     m_Bits: 0

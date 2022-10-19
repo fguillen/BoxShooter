@@ -16,8 +16,8 @@ TagManager:
   - Obstacle
   - GroundCollider
   - HittablePlayer
-  - 
-  - 
+  - ProjectilePlayer
+  - Sensor
   - 
   - 
   - 

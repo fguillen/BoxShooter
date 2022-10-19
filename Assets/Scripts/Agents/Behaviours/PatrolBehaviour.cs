@@ -31,14 +31,14 @@ namespace AI
 
         public override void Perform()
         {
+            if(agent.playerInAreaSensor.HasHit())
+                PlayerDetected();
+
             if(waiting)
                 return;
 
             if(agent.movementData.agentMovement != currentDirection)
                 agent.agentInput.CallMovement(currentDirection);
-
-            if(agent.playerInAreaSensor.HasHit())
-                PlayerDetected();
 
             if(agent.wallInFrontSensor.HasHit())
                 WallInFront();
