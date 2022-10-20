@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 976042074}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,6 +121,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3400507438895612200}
     m_Modifications:
+    - target: {fileID: 1192483402, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564209065908893507, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: objectiveLayerMask.m_Bits
+      value: 8448
+      objectReference: {fileID: 0}
+    - target: {fileID: 2794863383776218695, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2794863383776218695, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2835988647856538662, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: objectiveLayerMask.m_Bits
+      value: 8448
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822682809951223035, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: objectiveLayerMask.m_Bits
+      value: 8448
+      objectReference: {fileID: 0}
+    - target: {fileID: 5599475744056873067, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: objectiveLayerMask.m_Bits
+      value: 8448
+      objectReference: {fileID: 0}
     - target: {fileID: 7789505558182173894, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -188,6 +216,14 @@ PrefabInstance:
     - target: {fileID: 7789505558502251822, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_Name
       value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 8019633527222749455, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8053924758063093972, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: objectiveLayerMask.m_Bits
+      value: 8448
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}

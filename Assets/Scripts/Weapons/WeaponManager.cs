@@ -62,6 +62,7 @@ namespace WeaponSystem
 
         public void PickUpWeapon(AWeaponData weaponData)
         {
+            Debug.Log($"WeaponManager.PickUpWeapon({weaponData.weaponName})");
             AddWeapon(weaponData);
             SetCurrentWeapon(weaponData);
         }

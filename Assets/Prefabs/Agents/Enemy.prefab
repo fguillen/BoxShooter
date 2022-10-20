@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 378224206597240459}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,19 +164,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2564209065908893507, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: objectiveLayerMask.m_Bits
-      value: 8448
+      value: 24832
       objectReference: {fileID: 0}
     - target: {fileID: 2835988647856538662, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: objectiveLayerMask.m_Bits
-      value: 8448
+      value: 24832
       objectReference: {fileID: 0}
     - target: {fileID: 4822682809951223035, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: objectiveLayerMask.m_Bits
-      value: 8448
+      value: 24832
       objectReference: {fileID: 0}
     - target: {fileID: 5599475744056873067, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: objectiveLayerMask.m_Bits
-      value: 8448
+      value: 24832
       objectReference: {fileID: 0}
     - target: {fileID: 7789505558502251808, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_RootOrder
@@ -226,13 +226,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent
       objectReference: {fileID: 0}
+    - target: {fileID: 7789505558502251822, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7824361752212366794, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: objectiveLayerMask.m_Bits
       value: 263168
       objectReference: {fileID: 0}
     - target: {fileID: 8053924758063093972, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: objectiveLayerMask.m_Bits
-      value: 8448
+      value: 24832
       objectReference: {fileID: 0}
     - target: {fileID: 8063797551481350614, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_IsActive
