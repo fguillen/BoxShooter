@@ -50,7 +50,7 @@ MonoBehaviour:
   gizmosColorNoObstacle: {r: 1, g: 0, b: 0.9190922, a: 1}
   objectiveLayerMask:
     serializedVersion: 2
-    m_Bits: 133184
+    m_Bits: 139584
   limit: {fileID: 8840316372372930917}
 --- !u!1 &3923501549229488105
 GameObject:
