@@ -9,7 +9,13 @@ public class RunState : State
     [SerializeField] private UnityEvent OnStep;
 
     Vector2 inputDirection;
+    Vector2 notValidNextPosition = new Vector2(-100, -100);
     Vector2 nextPosition;
+
+    void Awake()
+    {
+        nextPosition = notValidNextPosition;
+    }
 
     public override StateType Type()
     {
@@ -23,7 +29,8 @@ public class RunState : State
         if(agent.movementData.IsMoving())
             HandleMovement(agent.movementData.agentMovement);
 
-        SetNextPosition(nextPosition);
+        if(nextPosition != notValidNextPosition)
+            SetNextPosition(nextPosition);
 
         // MoveToCell();
     }
