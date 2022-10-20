@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class Pickable : MonoBehaviour
 {
     public UnityEvent<Agent> OnPicked;
+    public bool isActive = true;
 
     Collider2D theCollider;
     SpriteRenderer spriteRenderer;
@@ -19,7 +20,7 @@ public class Pickable : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"Pickable.OnTriggerEnter2D({other.tag}, {other.gameObject.name})");
-        if(other.CompareTag("Player"))
+        if(isActive && other.CompareTag("Player"))
             PickUp(other.GetComponent<Agent>());
     }
 

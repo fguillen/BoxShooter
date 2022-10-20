@@ -3,19 +3,22 @@ using UnityEngine;
 public class Breakable : MonoBehaviour, IHittable
 {
     [SerializeField] BreakableData data;
+
     int hitPoints;
     int numSprites;
-    SpriteRenderer spriteRenderer;
+    SpriteRenderer spriteRendererBody;
+    GameObject pickable;
 
     void Awake()
     {
         numSprites = data.sprites.Count;
         hitPoints = data.sprites.Count;
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRendererBody = transform.Find("Body").GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
+        SetPickable();
         UpdateSprite();
     }
 
@@ -37,11 +40,23 @@ public class Breakable : MonoBehaviour, IHittable
     void UpdateSprite()
     {
         int spriteIndex = numSprites - hitPoints;
-        spriteRenderer.sprite = data.sprites[spriteIndex];
+        spriteRendererBody.sprite = data.sprites[spriteIndex];
     }
 
     void DestroyObject()
     {
+        if(pickable != null)
+            pickable.GetComponent<Pickable>().isActive = true;
+
         Destroy(gameObject);
+    }
+
+    void SetPickable()
+    {
+        if(data.pickablePrefab != null && Utils.RandomChance(data.pickableChance))
+        {
+            pickable = Instantiate(data.pickablePrefab, transform.position, Quaternion.identity);
+            pickable.GetComponent<Pickable>().isActive = false;
+        }
     }
 }

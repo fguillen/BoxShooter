@@ -65,7 +65,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6252571260690574132, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.058
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6252571260690574132, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -107,10 +107,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneWeaponPickable
       objectReference: {fileID: 0}
+    - target: {fileID: 6252571261680664161, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252571261680664161, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252571261680664174, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
+      propertyPath: m_Size.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6252571261680664174, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
+      propertyPath: m_Size.y
+      value: 0.16
+      objectReference: {fileID: 0}
     - target: {fileID: 6252571261680664174, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: dc1a5260470ab9d43a040c4e9c89bead, type: 3}
+      objectReference: {fileID: 21300000, guid: f1c1cc31f72744f6081f2afc908148dd, type: 3}
+    - target: {fileID: 6252571261680664174, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8482556549387978413, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: OnPicked.m_PersistentCalls.m_Calls.Array.size
       value: 1

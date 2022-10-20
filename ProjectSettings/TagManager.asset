@@ -42,18 +42,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 2280789717
-    locked: 0
   - name: Enemies
     uniqueID: 24980159
+    locked: 0
+  - name: Pickables
+    uniqueID: 2673457811
     locked: 0
   - name: Blocks
     uniqueID: 2190510571
     locked: 0
-  - name: Particles
-    uniqueID: 877419135
+  - name: Player
+    uniqueID: 2280789717
     locked: 0
   - name: Projectiles
     uniqueID: 926962351
+    locked: 0
+  - name: Particles
+    uniqueID: 877419135
     locked: 0
