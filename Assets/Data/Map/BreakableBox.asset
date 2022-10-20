@@ -16,4 +16,4 @@ MonoBehaviour:
   - {fileID: -29153848, guid: 14b830486697f4ef1adda74195d65834, type: 3}
   - {fileID: 439172073, guid: 14b830486697f4ef1adda74195d65834, type: 3}
   pickablePrefab: {fileID: 6823774751749168562, guid: f49bfa593b9af494baa36a6994849610, type: 3}
-  pickableChance: 1
+  pickableChance: 0.5
