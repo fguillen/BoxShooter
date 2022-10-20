@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Pickable : MonoBehaviour
 {
+    [SerializeField] bool destroyOnPick = true;
     public UnityEvent<Agent> OnPicked;
     public bool isActive = true;
 
@@ -28,7 +29,9 @@ public class Pickable : MonoBehaviour
     {
         Debug.Log("Pickable.PickUp");
         OnPicked?.Invoke(agent);
-        DestroyObject();
+
+        if(destroyOnPick)
+            DestroyObject();
     }
 
     void DestroyObject()

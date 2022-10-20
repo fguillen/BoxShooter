@@ -17,10 +17,10 @@ public class Key : MonoBehaviour
         theCollider = GetComponent<Collider2D>();
     }
 
-    void Start()
-    {
-        GoToDoor();
-    }
+    // void Start()
+    // {
+    //     GoToDoor();
+    // }
 
     public void GoToDoor()
     {

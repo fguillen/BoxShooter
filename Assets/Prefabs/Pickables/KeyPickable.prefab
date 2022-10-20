@@ -14,7 +14,7 @@ PrefabInstance:
     - target: {fileID: 3616301860524814737, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: OnPicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1571444038}
+      objectReference: {fileID: 0}
     - target: {fileID: 3616301860524814737, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: OnPicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6252571260690574135, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: m_Name
-      value: WeaponPickable
+      value: KeyPickable
       objectReference: {fileID: 0}
     - target: {fileID: 6252571261680664174, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: m_Sprite
@@ -122,7 +122,7 @@ PrefabInstance:
     - target: {fileID: 8482556549387978413, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: OnPicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1571444038}
+      objectReference: {fileID: 0}
     - target: {fileID: 8482556549387978413, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: OnPicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -141,21 +141,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
---- !u!1 &6823774751749168562 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6252571260690574135, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
-  m_PrefabInstance: {fileID: 610082256778622597}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1571444038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6823774751749168562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f1682dd936274a53968302b2af7003a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponData: {fileID: 0}
