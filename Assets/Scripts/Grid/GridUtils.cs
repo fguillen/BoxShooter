@@ -28,8 +28,6 @@ public static class GridUtils
 
     public static Vector2 CellPositionByPosition(Vector2 position)
     {
-        float gridSize = GameManager.instance.gameConfiguration.gridSize;
-
         Vector2 cellIndex = CellIndexByPosition(position);
         Vector2 result = CellPositionByIndex(cellIndex);
 
@@ -49,7 +47,7 @@ public static class GridUtils
     {
         float gridSize = GameManager.instance.gameConfiguration.gridSize;
         Vector2 result = position / gridSize;
-        result = new Vector2(Mathf.Ceil(result.x), Mathf.Ceil(result.y));
+        result = new Vector2(Mathf.Round(result.x), Mathf.Round(result.y));
 
         // Debug.Log($"GridUtils.CellIndexByPosition({position}): {result}");
 

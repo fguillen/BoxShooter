@@ -1598,6 +1598,7 @@ GameObject:
   - component: {fileID: 7789505558502251809}
   - component: {fileID: 3686008052872951327}
   - component: {fileID: 2625917285109817758}
+  - component: {fileID: 6547237976341126884}
   m_Layer: 6
   m_Name: Agent
   m_TagString: Player
@@ -1704,6 +1705,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &6547237976341126884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7789505558502251822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3480c20d3aa7f40529d3f632b172039a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8019633527222749455
 GameObject:
   m_ObjectHideFlags: 0
