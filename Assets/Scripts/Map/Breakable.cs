@@ -24,6 +24,9 @@ public class Breakable : MonoBehaviour, IHittable
 
     public void GetHit(int damage, Vector2 point)
     {
+        if(hitPoints == 0)
+            return;
+
         hitPoints--;
 
         if(hitPoints == 0)

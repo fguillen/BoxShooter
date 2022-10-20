@@ -9,15 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6339d38e725cb40d5be650357a18edf2, type: 3}
-  m_Name: PlayerAgentData
+  m_Script: {fileID: 11500000, guid: a077357b015944adfbb4c20735dc0d35, type: 3}
+  m_Name: MiniRexSpawnerData
   m_EditorClassIdentifier: 
-  maxHealth: 8
-  maxSpeed: 2.5
-  acceleration: 50
-  deceleration: 50
-  waitingTimeMax: 2
-  jumpForce: 0
-  lowJumpForce: 0
-  fallForce: 0
-  climbSpeed: 0
+  enemyPrefab: {fileID: 533736295859935534, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+  minWaitingTime: 2
+  maxWaitingTime: 10

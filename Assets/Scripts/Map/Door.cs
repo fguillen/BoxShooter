@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Door : MonoBehaviour
 {
     [SerializeField] List<Sprite> sprites;
+    [SerializeField] public UnityEvent OnPlayerInDoor;
 
     SpriteRenderer spriteRenderer;
     int numKeysMissing;
@@ -58,5 +60,8 @@ public class Door : MonoBehaviour
     void PlayerInDoor(Agent agent)
     {
         Debug.Log("PlayerInDoor");
+        OnPlayerInDoor?.Invoke();
+
+        agent.DestroyObject();
     }
 }
