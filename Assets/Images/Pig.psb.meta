@@ -91,6 +91,48 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
+  - name: Pig_FaceAttack_2
+    originalName: 
+    pivot: {x: 0.32948616, y: 0.54051083}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 164
+      width: 108
+      height: 86
+    spriteID: 473e4fbdc2ad14d43b55a9bc9d66dd75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -43, y: 128}
+  - name: Pig_FaceAttack_1
+    originalName: 
+    pivot: {x: 0.3596168, y: 0.5517108}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 321
+      y: 3
+      width: 117
+      height: 77
+    spriteID: 991489cba739b4b67a6a10545f5c07a0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 283, y: -40}
   - name: Pig_Face
     originalName: 
     pivot: {x: 0.34967327, y: 0.5179891}
@@ -98,8 +140,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 164
+      x: 185
+      y: 4
       width: 128
       height: 93
     spriteID: 366ba4fff6a0d450690983c5c49c8725
@@ -111,7 +153,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -31, y: 136}
+    uvTransform: {x: 150, y: -24}
   - name: Pig_Ears
     originalName: 
     pivot: {x: 0.37081897, y: -1.2811594}
@@ -119,8 +161,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 265
+      x: 185
+      y: 105
       width: 136
       height: 31
     spriteID: 22588e763142c47f2b646f1fdb100bb8
@@ -132,7 +174,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -29, y: 150}
+    uvTransform: {x: 152, y: -10}
   - name: Pig_Body
     originalName: 
     pivot: {x: 0.44741368, y: 0.483488}
@@ -228,13 +270,33 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Pig_FaceAttack_2
+    spriteName: Pig_FaceAttack_2
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 473e4fbdc2ad14d43b55a9bc9d66dd75
+    layerID: 14
+    mosaicPosition: {x: 4, y: 164}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pig_FaceAttack_1
+    spriteName: Pig_FaceAttack_1
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 991489cba739b4b67a6a10545f5c07a0
+    layerID: 11
+    mosaicPosition: {x: 321, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Pig_Face
     spriteName: Pig_Face
     isGroup: 0
     parentIndex: -1
     spriteID: 366ba4fff6a0d450690983c5c49c8725
     layerID: 9
-    mosaicPosition: {x: 4, y: 164}
+    mosaicPosition: {x: 185, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -244,7 +306,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 22588e763142c47f2b646f1fdb100bb8
     layerID: 8
-    mosaicPosition: {x: 4, y: 265}
+    mosaicPosition: {x: 185, y: 105}
     flatten: 0
     isImported: 1
     isVisible: 1
