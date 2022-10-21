@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BreakableBox
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: -29153848, guid: 14b830486697f4ef1adda74195d65834, type: 3}
-  - {fileID: 439172073, guid: 14b830486697f4ef1adda74195d65834, type: 3}
+  - {fileID: 21300000, guid: 6c6cedbc8583f4b719686e231427fa24, type: 3}
+  - {fileID: 21300000, guid: 28035854640e94b24816eb47bce85043, type: 3}
   pickablePrefab: {fileID: 6823774751749168562, guid: f49bfa593b9af494baa36a6994849610, type: 3}
   pickableChance: 0.5
