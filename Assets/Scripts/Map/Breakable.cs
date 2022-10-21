@@ -1,19 +1,24 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Breakable : MonoBehaviour, IHittable
 {
     [SerializeField] BreakableData data;
+    public UnityEvent OnHit;
 
     int hitPoints;
     int numSprites;
-    SpriteRenderer spriteRendererBody;
+    SpriteRenderer spriteRenderer;
     GameObject pickable;
 
     void Awake()
     {
         numSprites = data.sprites.Count;
         hitPoints = data.sprites.Count;
-        spriteRendererBody = transform.Find("Body").GetComponent<SpriteRenderer>();
+        spriteRenderer = transform.Find("Body").GetComponent<SpriteRenderer>();
+
+        if(data.spriteColors.Count > 0)
+            spriteRenderer.color = data.spriteColors[Random.Range(0, data.spriteColors.Count)];
     }
 
     void Start()
@@ -32,7 +37,10 @@ public class Breakable : MonoBehaviour, IHittable
         if(hitPoints == 0)
             DestroyObject();
         else
+        {
             UpdateSprite();
+            OnHit?.Invoke();
+        }
     }
 
     public Agent Agent()
@@ -43,7 +51,7 @@ public class Breakable : MonoBehaviour, IHittable
     void UpdateSprite()
     {
         int spriteIndex = numSprites - hitPoints;
-        spriteRendererBody.sprite = data.sprites[spriteIndex];
+        spriteRenderer.sprite = data.sprites[spriteIndex];
     }
 
     void DestroyObject()
