@@ -1566,6 +1566,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.82060784
       objectReference: {fileID: 0}
+    - target: {fileID: 5743194037394127822, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
 --- !u!1001 &250964914
@@ -5140,6 +5144,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 3400507439333354462, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+    - target: {fileID: 5743194037394127822, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8754260837368992379, guid: dbdf1842b6ff14578a40dee5abf39bf1, type: 3}
       propertyPath: spriteRenderer
       value: 
