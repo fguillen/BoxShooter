@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using WeaponSystem;
 
-public class BonePicker : MonoBehaviour
+public class FruitPicker : MonoBehaviour
 {
     [SerializeField] int points = 1;
 

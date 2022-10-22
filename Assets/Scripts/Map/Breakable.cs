@@ -64,9 +64,10 @@ public class Breakable : MonoBehaviour, IHittable
 
     void SetPickable()
     {
-        if(data.pickablePrefab != null && Utils.RandomChance(data.pickableChance))
+        if(data.pickablePrefabs.Count > 0 && Utils.RandomChance(data.pickableChance))
         {
-            pickable = Instantiate(data.pickablePrefab, transform.position, Quaternion.identity);
+            GameObject pickablePrefab = Utils.RandomElement(data.pickablePrefabs);
+            pickable = Instantiate(pickablePrefab, transform.position, Quaternion.identity);
             pickable.GetComponent<Pickable>().isActive = false;
         }
     }

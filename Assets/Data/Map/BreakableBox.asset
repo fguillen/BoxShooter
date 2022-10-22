@@ -19,5 +19,8 @@ MonoBehaviour:
   - {r: 0.764151, g: 0.6150384, b: 0.39288896, a: 1}
   - {r: 0.4000089, g: 0.5172618, b: 0.9528302, a: 1}
   - {r: 0.9433962, g: 0.9422977, b: 0.4494482, a: 1}
-  pickablePrefab: {fileID: 6823774751749168562, guid: f49bfa593b9af494baa36a6994849610, type: 3}
+  pickablePrefabs:
+  - {fileID: 5703159232428587668, guid: c743001b62f0a480aa0e4e12683606d1, type: 3}
+  - {fileID: 5703159232428587668, guid: fb0ef7ff69cc84ff08a850d42b69a3d9, type: 3}
+  - {fileID: 6823774751749168562, guid: f49bfa593b9af494baa36a6994849610, type: 3}
   pickableChance: 0.5
