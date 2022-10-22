@@ -93,7 +93,7 @@ ScriptedImporter:
   rigSpriteImportData:
   - name: Pig_FaceAttack_2
     originalName: 
-    pivot: {x: 0.32948616, y: 0.54051083}
+    pivot: {x: 0.46117344, y: 0.53078246}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -114,7 +114,7 @@ ScriptedImporter:
     uvTransform: {x: 89, y: 128}
   - name: Pig_FaceAttack_1
     originalName: 
-    pivot: {x: 0.3596168, y: 0.5517108}
+    pivot: {x: 0.47402388, y: 0.59516925}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -135,7 +135,7 @@ ScriptedImporter:
     uvTransform: {x: -34, y: 326}
   - name: Pig_Hitted
     originalName: 
-    pivot: {x: 0.39965412, y: 0.5615725}
+    pivot: {x: 0.49410918, y: 0.5356974}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -156,7 +156,7 @@ ScriptedImporter:
     uvTransform: {x: -33, y: 140}
   - name: Pig_Face
     originalName: 
-    pivot: {x: 0.34967327, y: 0.5179891}
+    pivot: {x: 0.48039222, y: 0.54497504}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -177,7 +177,7 @@ ScriptedImporter:
     uvTransform: {x: -31, y: 241}
   - name: Pig_Ears
     originalName: 
-    pivot: {x: 0.37081897, y: -1.2811594}
+    pivot: {x: 0.50615156, y: -1.2811644}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -198,7 +198,7 @@ ScriptedImporter:
     uvTransform: {x: -29, y: 340}
   - name: Pig_Body
     originalName: 
-    pivot: {x: 0.44741368, y: 0.483488}
+    pivot: {x: 0.54780585, y: 0.4944959}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:

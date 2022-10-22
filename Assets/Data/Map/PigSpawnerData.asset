@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a077357b015944adfbb4c20735dc0d35, type: 3}
-  m_Name: MiniRexSpawnerData
+  m_Name: PigSpawnerData
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 533736295859935534, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+  enemyPrefab: {fileID: 7453868682548538379, guid: 6c5ecdbbb1998409cbe30cf0ec79a125, type: 3}
   minWaitingTime: 2
   maxWaitingTime: 10
