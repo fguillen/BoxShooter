@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agent
       objectReference: {fileID: 0}
+    - target: {fileID: 7789505558502251822, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7911069863800002003, guid: b2a124fd08e4f4498a76b70f942736cf, type: 3}
       propertyPath: m_FlipX
       value: 0

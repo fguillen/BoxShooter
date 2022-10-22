@@ -13,6 +13,8 @@ namespace AI
         bool waiting = false;
         List<Vector2> directions;
 
+        [SerializeField] bool debugEnabled = false;
+
 
         void Awake()
         {
@@ -26,7 +28,7 @@ namespace AI
         public override void PostInitialize()
         {
             // Debug.Log("PatrolBehaviour.PostInitialize()");
-            InitCurrentMovement();
+            ChangeCurrentDirection();
         }
 
         public override void Perform()
@@ -44,17 +46,20 @@ namespace AI
                 WallInFront();
         }
 
-        void InitCurrentMovement()
+        void ChangeCurrentDirection()
         {
-            currentDirection = directions[Random.Range(0, directions.Count)];
-        }
+            Log("Turn()");
+            List<Vector2> directionsWithObstacle = agent.wallInAllDirectionsSensor.GetDirectionsWithHit();
+            List<Vector2> possibleDirections = directions.Where( e => !directionsWithObstacle.Contains(e) ).ToList();
+            Log($"Turns().possibleDirection: {possibleDirections}");
 
-        void Turn()
-        {
-            List<Vector2> directionsWithWall = agent.wallInAllDirectionsSensor.GetDirectionsWithHit();
-            List<Vector2> possibleDirections = directions.Where( e => !directionsWithWall.Contains(e) ).ToList();
-            currentDirection = possibleDirections[Random.Range(0, possibleDirections.Count)];
-            // Debug.Log($"Turn().currentDirection: {possibleDirections} -> {currentDirection}");
+            if(possibleDirections.Count == 0)
+            {
+                Debug.Log($"Not availableDirections ({agent.transform.position})");
+                WallInFront();
+            }
+            else
+                currentDirection = possibleDirections[Random.Range(0, possibleDirections.Count)];
         }
 
         void WallInFront()
@@ -77,7 +82,13 @@ namespace AI
         {
             // Debug.Log("ContinueMoving");
             waiting = false;
-            Turn();
+            ChangeCurrentDirection();
+        }
+
+        void Log(string message)
+        {
+            if(debugEnabled)
+                Debug.Log(message);
         }
     }
 }
