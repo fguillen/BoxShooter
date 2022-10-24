@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Door : MonoBehaviour
+public class House : MonoBehaviour
 {
     [SerializeField] List<Sprite> sprites;
     [SerializeField] public UnityEvent OnPlayerInDoor;
@@ -17,7 +17,7 @@ public class Door : MonoBehaviour
         numSprites = sprites.Count;
         numKeysMissing = sprites.Count - 1;
 
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteRenderer = transform.FindRecursive("Door").GetComponent<SpriteRenderer>();
     }
 
     void Start()
@@ -27,12 +27,14 @@ public class Door : MonoBehaviour
 
     public void GetKey()
     {
-        Debug.Log("Door.GetKey()");
+        Debug.Log("House.GetKey()");
 
         if(numKeysMissing == 0)
             return;
 
         numKeysMissing--;
+        Debug.Log($"House.numKeysMissing: {numKeysMissing}");
+
         UpdateSprite();
 
         if(numKeysMissing == 0)
@@ -47,12 +49,13 @@ public class Door : MonoBehaviour
 
     void DoorOpen()
     {
+        Debug.Log("House.DoorOpen()");
         isOpen = true;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"Door.OnTriggerEnter2D({other.tag}, {other.gameObject.name})");
+        Debug.Log($"House.OnTriggerEnter2D({other.tag}, {other.gameObject.name})");
         if(isOpen && other.CompareTag("Player"))
             PlayerInDoor(other.GetComponent<Agent>());
     }

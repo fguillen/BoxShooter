@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8482556549387978413, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: OnPicked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToDoor
+      value: GoToHouse
       objectReference: {fileID: 0}
     - target: {fileID: 8482556549387978413, guid: d288ca6542ced43ba9ff3fe6a1af27fc, type: 3}
       propertyPath: OnPicked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

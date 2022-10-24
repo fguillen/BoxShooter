@@ -7,41 +7,43 @@ public class Key : MonoBehaviour
 {
     [SerializeField] float speed = 2f;
 
-    Door door;
+    House house;
     Sequence sequence;
     Collider2D theCollider;
 
     void Awake()
     {
-        door = FindObjectOfType<Door>();
+        house = FindObjectOfType<House>();
         theCollider = GetComponent<Collider2D>();
     }
 
     // void Start()
     // {
-    //     GoToDoor();
+    //     GoToHouse();
     // }
 
-    public void GoToDoor()
+    public void GoToHouse()
     {
+        Debug.Log("Key.GoToHouse()");
+
         theCollider.enabled = false;
 
         if(sequence != null)
             sequence.Kill();
 
         sequence = DOTween.Sequence();
-        sequence.Append(transform.DOMoveX(door.transform.position.x, speed).SetSpeedBased());
-        sequence.Append(transform.DOMoveY(door.transform.position.y, speed).SetSpeedBased());
-        sequence.OnComplete(OpenDoor);
+        sequence.Append(transform.DOMoveX(house.transform.position.x, speed).SetSpeedBased());
+        sequence.Append(transform.DOMoveY(house.transform.position.y, speed).SetSpeedBased());
+        sequence.OnComplete(OpenHouse);
     }
 
-    void OpenDoor()
+    void OpenHouse()
     {
-        Debug.Log("Key.OpenDoor()");
+        Debug.Log("Key.OpenHouse()");
         if(sequence != null)
             sequence.Kill();
 
-        door.GetKey();
+        house.GetKey();
         Destroy(gameObject);
     }
 }
