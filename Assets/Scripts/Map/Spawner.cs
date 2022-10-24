@@ -2,24 +2,26 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] SpawnerData data;
     float nextSpawnAt;
+    MapManager mapManager;
 
     void Start()
     {
+        mapManager = GameManager.instance.mapManager;
         SetNextSpawnAt();
     }
 
     void Update()
     {
-        if(IsTimeForSpawn())
+        if(IsTimeForSpawn() && mapManager.CanSpawnEnemy())
             Spawn();
     }
 
     private void Spawn()
     {
         SetNextSpawnAt();
-        Instantiate(data.enemyPrefab, transform.position, Quaternion.identity);
+        GameObject enemyObject = Instantiate(mapManager.NextEnemy(), transform.position, Quaternion.identity);
+        mapManager.EnemyAdded(enemyObject);
     }
 
     private bool IsTimeForSpawn()
@@ -29,6 +31,6 @@ public class Spawner : MonoBehaviour
 
     void SetNextSpawnAt()
     {
-        nextSpawnAt = Time.time + Random.Range(data.minWaitingTime, data.maxWaitingTime);
+        nextSpawnAt = Time.time + Random.Range(mapManager.data.spawnerMinWaitingTime, mapManager.data.spawnerMaxWaitingTime);
     }
 }

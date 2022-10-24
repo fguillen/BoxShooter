@@ -99,6 +99,9 @@ public class Agent : MonoBehaviour
 
         agentInput.OnWeaponChange -= weaponManager.HandleWeaponChange;
 
+        if(transform.parent.CompareTag("Enemy"))
+            GameManager.instance.mapManager.EnemyRemoved(transform.parent.gameObject);
+
         Destroy(transform.parent.gameObject);
     }
 
