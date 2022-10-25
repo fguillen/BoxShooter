@@ -42,8 +42,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Enemies
-    uniqueID: 24980159
+  - name: Background
+    uniqueID: 2433645749
     locked: 0
   - name: Pickables
     uniqueID: 2673457811
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2280789717
+    locked: 0
+  - name: Enemies
+    uniqueID: 24980159
     locked: 0
   - name: Projectiles
     uniqueID: 926962351
