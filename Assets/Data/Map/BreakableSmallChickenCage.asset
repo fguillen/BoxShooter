@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BreakableSmallChickenCage
   m_EditorClassIdentifier: 
   sprites:
-  - {fileID: 1677840763470456938, guid: f9610f4c2c5b147a1a6f33f8ee778eb6, type: 3}
-  - {fileID: -7481489255481854669, guid: f9610f4c2c5b147a1a6f33f8ee778eb6, type: 3}
+  - {fileID: -5440894308099814154, guid: 039847fb9dddd427ca73bdc9c84abf45, type: 3}
+  - {fileID: -1508573274563335073, guid: 039847fb9dddd427ca73bdc9c84abf45, type: 3}
   spriteColors: []
   pickablePrefabs:
   - {fileID: 6823774751749168562, guid: 356e91e21d3374038b67009c971b4a2c, type: 3}
