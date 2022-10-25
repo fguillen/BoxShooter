@@ -91,27 +91,6 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Chicken2_Face
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 338
-      width: 269
-      height: 157
-    spriteID: 2edba4e59c5504f01911c13b81ccf1ed
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: -52, y: 227}
   - name: Chicken2_Crest
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -120,7 +99,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 281
-      y: 338
+      y: 514
       width: 87
       height: 43
     spriteID: 199cf5ccc3e344125b94326ddb65daa9
@@ -132,7 +111,49 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 203, y: 21}
+    uvTransform: {x: 203, y: 197}
+  - name: Chicken2_FaceShoot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 338
+      width: 275
+      height: 168
+    spriteID: 6276b7509139e4c8e9e8f05809a96c59
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -47, y: 247}
+  - name: Chicken2_Face
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 514
+      width: 269
+      height: 157
+    spriteID: 2edba4e59c5504f01911c13b81ccf1ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -52, y: 403}
   - name: Chicken2_Body
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -234,7 +255,17 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 199cf5ccc3e344125b94326ddb65daa9
     layerID: 12
-    mosaicPosition: {x: 281, y: 338}
+    mosaicPosition: {x: 281, y: 514}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Chicken2_FaceShoot
+    spriteName: Chicken2_FaceShoot
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 6276b7509139e4c8e9e8f05809a96c59
+    layerID: 29
+    mosaicPosition: {x: 4, y: 338}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -244,7 +275,7 @@ ScriptedImporter:
     parentIndex: -1
     spriteID: 2edba4e59c5504f01911c13b81ccf1ed
     layerID: 13
-    mosaicPosition: {x: 4, y: 338}
+    mosaicPosition: {x: 4, y: 514}
     flatten: 0
     isImported: 1
     isVisible: 1
