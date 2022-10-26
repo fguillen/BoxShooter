@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7a108e63eda6647d9a285ce311168c82
+guid: d4ebf2aebf4584f68997af8662db99e1
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 360
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -91,18 +91,18 @@ ScriptedImporter:
     uvTransform: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Background2_Details
+  - name: Layer 2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 372
-      width: 324
-      height: 351
-    spriteID: b28d3cdf5734f4a339c4def8ff2ea1c1
+      x: 353
+      y: 4
+      width: 132
+      height: 138
+    spriteID: 707c3bf9d3ba2404da03e0031b192ae7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -111,8 +111,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: -21, y: 371}
-  - name: Background2
+    uvTransform: {x: 310, y: -40}
+  - name: Shape 8
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -121,9 +121,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 0
-      height: 0
-    spriteID: d219ca4bc8b4e467a8f16ae3fb8b4cec
+      width: 341
+      height: 327
+    spriteID: baac2c8e4d6b24d4c830034d266a31fa
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -132,7 +132,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     parentGroupIndex: -1
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 0, y: -7}
   characterData:
     bones: []
     parts: []
@@ -146,7 +146,51 @@ ScriptedImporter:
     dimension: {x: 0, y: 0}
     characterGroups: []
     boneReadOnly: 0
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   mosaicLayers: 1
   characterMode: 1
   documentPivot: {x: 0, y: 0}
@@ -163,22 +207,22 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: Background2_Details
-    spriteName: Background2_Details
+  - name: Layer 2
+    spriteName: Layer 2
     isGroup: 0
     parentIndex: -1
-    spriteID: b28d3cdf5734f4a339c4def8ff2ea1c1
-    layerID: 5
-    mosaicPosition: {x: 4, y: 372}
+    spriteID: 707c3bf9d3ba2404da03e0031b192ae7
+    layerID: 21
+    mosaicPosition: {x: 353, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: Background2
-    spriteName: Background2
+  - name: Shape 8
+    spriteName: Shape 8
     isGroup: 0
     parentIndex: -1
-    spriteID: d219ca4bc8b4e467a8f16ae3fb8b4cec
-    layerID: 2
+    spriteID: baac2c8e4d6b24d4c830034d266a31fa
+    layerID: 19
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
