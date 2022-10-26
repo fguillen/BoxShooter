@@ -6,6 +6,11 @@ public class CenterInCell : MonoBehaviour
 {
     void Start()
     {
+        Center();
+    }
+
+    public void Center()
+    {
         transform.position = GridUtils.CellPositionByPosition(transform.position);
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public static class TransformExtensions
@@ -20,4 +21,20 @@ public static class TransformExtensions
 
         return null;
     }
+
+    // public static List<T> GetComponentsInChildrenRecursively<T>(this Transform self, List<T> result)
+    // {
+    //     foreach (Transform child in self)
+    //     {
+    //         T[] components = child.GetComponents<T>();
+
+    //         foreach (T component in components)
+    //             if (component != null)
+    //                 result.Add(component);
+
+    //         GetComponentsInChildrenRecursively<T>(child, result);
+    //     }
+
+    //     return result;
+    // }
 }
