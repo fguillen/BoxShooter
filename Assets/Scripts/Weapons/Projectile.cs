@@ -80,7 +80,7 @@ namespace WeaponSystem
         void DestroyObject()
         {
             Debug.Log("Projectile.DestroyObject()");
-            Instantiate(data.explosionPrefab, transform.position, Quaternion.identity);
+            Instantiate(data.explosionPrefab, transform.position, Vector2Utils.ToRotation(direction * -1));
             DOTween.Kill(transform);
             Destroy(gameObject);
         }

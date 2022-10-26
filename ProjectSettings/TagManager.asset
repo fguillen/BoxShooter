@@ -45,9 +45,6 @@ TagManager:
   - name: Background
     uniqueID: 2433645749
     locked: 0
-  - name: Particles
-    uniqueID: 877419135
-    locked: 0
   - name: Pickables
     uniqueID: 2673457811
     locked: 0
@@ -68,4 +65,7 @@ TagManager:
     locked: 0
   - name: BoxKey
     uniqueID: 1169410591
+    locked: 0
+  - name: Particles
+    uniqueID: 877419135
     locked: 0

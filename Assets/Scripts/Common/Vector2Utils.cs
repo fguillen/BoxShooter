@@ -42,4 +42,10 @@ public static class Vector2Utils
 
         return result;
     }
+
+    public static Quaternion ToRotation(Vector2 vector)
+    {
+        float angle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
+        return Quaternion.AngleAxis(angle, Vector3.forward);
+    }
 }
