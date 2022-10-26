@@ -112,27 +112,6 @@ ScriptedImporter:
     tessellationDetail: 0
     parentGroupIndex: -1
     uvTransform: {x: 4, y: 4}
-  - name: Background_Layer2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 242
-      y: 4
-      width: 236
-      height: 133
-    spriteID: 34edc0e27fbe346f09f99abee7d08fcc
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    parentGroupIndex: -1
-    uvTransform: {x: 242, y: -106}
   - name: Background_Layer1
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -212,8 +191,8 @@ ScriptedImporter:
     layerID: 4
     mosaicPosition: {x: 242, y: 4}
     flatten: 0
-    isImported: 1
-    isVisible: 1
+    isImported: 0
+    isVisible: 0
   - name: Background_Layer1
     spriteName: Background_Layer1
     isGroup: 0
