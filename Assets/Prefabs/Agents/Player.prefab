@@ -126,6 +126,10 @@ PrefabInstance:
       value: Body
       objectReference: {fileID: 0}
     - target: {fileID: -8648400537851226062, guid: 56bc54b0567b14bb6b8c6df8b6042146, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8648400537851226062, guid: 56bc54b0567b14bb6b8c6df8b6042146, type: 3}
       propertyPath: m_SortingLayer
       value: 4
       objectReference: {fileID: 0}
