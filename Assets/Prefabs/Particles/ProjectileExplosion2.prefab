@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2659661359660369341}
   - component: {fileID: 2659661359660369340}
   m_Layer: 0
-  m_Name: ProjectileExplosion
+  m_Name: ProjectileExplosion2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -221,7 +221,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 2
+      minMaxState: 0
       minColor: {r: 0.6792453, g: 0.66322535, b: 0.66322535, a: 1}
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
@@ -1480,8 +1480,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startFrame:
       serializedVersion: 2
-      minMaxState: 3
-      scalar: 0.6
+      minMaxState: 0
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1540,11 +1540,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 2997706801838899589, guid: ed260542fa7a1410bb9b000eb2481aca, type: 3}
-    - sprite: {fileID: 486672816081798506, guid: ed260542fa7a1410bb9b000eb2481aca, type: 3}
-    - sprite: {fileID: -3140077927393991167, guid: ed260542fa7a1410bb9b000eb2481aca, type: 3}
-    - sprite: {fileID: -7407111653580565816, guid: ed260542fa7a1410bb9b000eb2481aca, type: 3}
-    - sprite: {fileID: -1716666505500277258, guid: ed260542fa7a1410bb9b000eb2481aca, type: 3}
+    - sprite: {fileID: 4267876813900424332, guid: 0f95b7d02b5724ad0a9b85a95112ebac, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

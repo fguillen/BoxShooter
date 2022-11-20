@@ -22,4 +22,4 @@ MonoBehaviour:
   range: 4
   speed: 8
   weaponPrefab: {fileID: 4079167418700097322, guid: 482ad11ebbec54508877b2cba9807625, type: 3}
-  explosionPrefab: {fileID: 2659661359660369339, guid: 76fd2f2ed3ca84b049a7dfaa97be94f1, type: 3}
+  explosionPrefab: {fileID: 2659661359660369339, guid: 51e7db2f211d044f6b5d1818202a2a09, type: 3}
