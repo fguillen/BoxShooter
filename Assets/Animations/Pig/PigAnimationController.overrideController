@@ -9,13 +9,13 @@ AnimatorOverrideController:
   m_Name: PigAnimationController
   m_Controller: {fileID: 9100000, guid: 6a5ebd7863f64418dab12e5f5366a389, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 5071e3c55f3dd4940862fdfa5780e130, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 65e0bb6e3ffd94c77882847423f97d19, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: aa991704e12cb48dcab2e6bab0756403, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 4538131051e104d9fb86836a0e2e346d, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 526b5ab7e9282445ea7a21614f8beeb2, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 88c5e2bdfd26f40109bbca06464cb510, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 21520b65693854d308cae7637c157ffc, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: ffdd2abbae052460ebb3972a7ed570bc, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: f9fc5feef869b44f681e2853d0989ef7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 25203567e5d774f92b1f3675d3758985, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 1ceaf934e4d714404a4207e8aafd07df, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: a9c795c731b1d4165861da8a0c88ea52, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 180f72a2c47744398a63dc3b37a9e22c, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: fe31506ac8a3d4fb09b7cca7b75e3988, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: f1be2223f15f8467c9479f2f6498772e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 65e0bb6e3ffd94c77882847423f97d19, type: 2}
