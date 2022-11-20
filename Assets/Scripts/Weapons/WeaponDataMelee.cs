@@ -35,7 +35,7 @@ namespace WeaponSystem
                     if(hittable.Agent() != agent)
                     {
                         Debug.Log($"Sending Hit");
-                        hittable.GetHit(damage, hit.point);
+                        hittable.GetHit(damage, agent.transform.position);
                     }
                 }
             }
