@@ -5,6 +5,7 @@ public class Breakable : MonoBehaviour, IHittable
 {
     [SerializeField] BreakableData data;
     public UnityEvent OnHit;
+    public UnityEvent OnOpened;
 
     int hitPoints;
     int numSprites;
@@ -35,7 +36,7 @@ public class Breakable : MonoBehaviour, IHittable
         hitPoints--;
 
         if(hitPoints == 0)
-            DestroyObject();
+            Opened();
         else
         {
             UpdateSprite();
@@ -46,6 +47,13 @@ public class Breakable : MonoBehaviour, IHittable
     public Agent Agent()
     {
         return null;
+    }
+
+    void Opened()
+    {
+        spriteRenderer.enabled = false;
+        OnOpened?.Invoke();
+        DestroyObject();
     }
 
     void UpdateSprite()

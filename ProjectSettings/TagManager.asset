@@ -45,6 +45,9 @@ TagManager:
   - name: Background
     uniqueID: 2433645749
     locked: 0
+  - name: EffectsBack
+    uniqueID: 3388792471
+    locked: 0
   - name: Pickables
     uniqueID: 2673457811
     locked: 0
