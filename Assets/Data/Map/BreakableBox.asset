@@ -16,9 +16,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2017a7f5838144272a27d2adb982fbc1, type: 3}
   - {fileID: 21300000, guid: 7009aadb2f8584d81959da9e54ae2f3e, type: 3}
   spriteColors:
-  - {r: 0.764151, g: 0.6150384, b: 0.39288896, a: 1}
-  - {r: 0.4000089, g: 0.5172618, b: 0.9528302, a: 1}
-  - {r: 0.9433962, g: 0.9422977, b: 0.4494482, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
   pickablePrefabs:
   - {fileID: 5703159232428587668, guid: c743001b62f0a480aa0e4e12683606d1, type: 3}
   - {fileID: 5703159232428587668, guid: fb0ef7ff69cc84ff08a850d42b69a3d9, type: 3}
