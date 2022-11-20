@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponName: Stone
   damage: 1
-  sprite: {fileID: 21300000, guid: f1c1cc31f72744f6081f2afc908148dd, type: 3}
+  sprite: {fileID: -8946579017637200179, guid: d218c41bcfe98489a8ce8aab85b8b0c1, type: 3}
   soundEffect: {fileID: 0}
   hittableMask:
     serializedVersion: 2
