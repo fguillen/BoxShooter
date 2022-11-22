@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1479001883758338109, guid: 6c5ecdbbb1998409cbe30cf0ec79a125, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1871251837278712276, guid: 6c5ecdbbb1998409cbe30cf0ec79a125, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7288786478127023023, guid: 6c5ecdbbb1998409cbe30cf0ec79a125, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -183,6 +191,10 @@ PrefabInstance:
       value: EnemyPig
       objectReference: {fileID: 0}
     - target: {fileID: 7453868682548538379, guid: 6c5ecdbbb1998409cbe30cf0ec79a125, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021850673810257345, guid: 6c5ecdbbb1998409cbe30cf0ec79a125, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
