@@ -5,19 +5,20 @@ using UnityEngine;
 public class FeedbackImmunity : MonoBehaviour
 {
     [SerializeField] Collider2D theCollider;
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] List<SpriteRenderer> spriteRenderers;
+    [SerializeField] List<SpriteRendererOriginalStruct> spriteRendererOriginals = new List<SpriteRendererOriginalStruct>();
     [SerializeField] float durationSeconds = 1f;
     [SerializeField] float blinkDurationSeconds = 0.2f;
     [SerializeField][Range(0, 1)] float blinkAlpha = 0.5f;
-    float originalAlpha;
 
     void Awake()
     {
-        originalAlpha = spriteRenderer.color.a;
+        spriteRendererOriginals = SpriteRendererOriginalStruct.BuildSpriteRendererOriginalsCollection(spriteRenderers);
     }
 
     public void Perform()
     {
+        Debug.Log("FeedbackImmunity.Perform()");
         StopAllCoroutines();
         ToggleActive(true);
         StartCoroutine(BlinkingCoroutine());
@@ -46,7 +47,7 @@ public class FeedbackImmunity : MonoBehaviour
         yield return new WaitForSeconds(blinkDurationSeconds);
         SetAlpha(blinkAlpha);
         yield return new WaitForSeconds(blinkDurationSeconds);
-        SetAlpha(1f);
+        SetAlphaBack();
 
         if(!theCollider.enabled)
             StartCoroutine(BlinkingCoroutine());
@@ -54,8 +55,16 @@ public class FeedbackImmunity : MonoBehaviour
 
     void SetAlpha(float alpha)
     {
-        Color color = spriteRenderer.color;
-        color.a = alpha;
-        spriteRenderer.color = color;
+        foreach (var spriteRenderer in spriteRenderers)
+        {
+            Color color = spriteRenderer.color;
+            color.a = alpha;
+            spriteRenderer.color = color;
+        }
+    }
+
+    void SetAlphaBack()
+    {
+        SpriteRendererOriginalStruct.SetOriginalColor(spriteRendererOriginals);
     }
 }

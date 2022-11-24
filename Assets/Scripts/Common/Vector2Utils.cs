@@ -48,4 +48,9 @@ public static class Vector2Utils
         float angle = Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
         return Quaternion.AngleAxis(angle, Vector3.forward);
     }
+
+    public static bool CloseEnough(Vector2 vectorA, Vector2 vectorB, float offset)
+    {
+        return (vectorA - vectorB).magnitude < offset;
+    }
 }

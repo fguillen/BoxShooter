@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class FeedbackWhiteFlash : MonoBehaviour, IFeedback
 {
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] List<SpriteRenderer> spriteRenderers;
+    [SerializeField] List<SpriteRendererOriginalStruct> spriteRendererOriginals = new List<SpriteRendererOriginalStruct>();
     [SerializeField] float durationSeconds = 0.1f;
     [SerializeField] Material solidColorMaterial;
-    Material originalMaterial;
 
     void Awake()
     {
-        originalMaterial = spriteRenderer.material;
+        spriteRendererOriginals = SpriteRendererOriginalStruct.BuildSpriteRendererOriginalsCollection(spriteRenderers);
 
         if(solidColorMaterial == null || !solidColorMaterial.HasProperty("Active"))
             throw new Exception("Material not found or has no 'Active' property");
@@ -20,6 +20,7 @@ public class FeedbackWhiteFlash : MonoBehaviour, IFeedback
 
     public void Perform()
     {
+        Debug.Log("FeedbackWhiteFlash.Perform()");
         StopAllCoroutines();
         ToggleActive(true);
         StartCoroutine(ToggleDeactivateCoroutine());
@@ -29,11 +30,11 @@ public class FeedbackWhiteFlash : MonoBehaviour, IFeedback
     {
         if(val)
         {
-            spriteRenderer.material = solidColorMaterial;
+            SetMaterialInSpriteRenderers(solidColorMaterial);
             solidColorMaterial.SetFloat("Active", 1f);
         } else
         {
-            spriteRenderer.material = originalMaterial;
+            SpriteRendererOriginalStruct.SetOriginalMaterial(spriteRendererOriginals);
             solidColorMaterial.SetFloat("Active", 0f);
         }
     }
@@ -43,4 +44,12 @@ public class FeedbackWhiteFlash : MonoBehaviour, IFeedback
         yield return new WaitForSeconds(durationSeconds);
         ToggleActive(false);
     }
+
+    void SetMaterialInSpriteRenderers(Material material)
+    {
+        foreach (var spriteRendererOriginal in spriteRendererOriginals)
+            spriteRendererOriginal.spriteRenderer.material = material;
+    }
+
+
 }

@@ -26,6 +26,12 @@ public class DamageManager : MonoBehaviour, IHittable
         isDead = false;
     }
 
+    [ContextMenu("GetHit(0,0)")]
+    public void GetHit()
+    {
+        GetHit(0, new Vector2(0f, 0f));
+    }
+
     public void GetHit(int damage, Vector2 point)
     {
         currentHealth -= damage;

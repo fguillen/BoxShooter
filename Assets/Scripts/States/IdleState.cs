@@ -15,6 +15,11 @@ public class IdleState : State
         agent.rb2d.velocity = Vector2.zero;
     }
 
+    public override void StateUpdate() {
+        if(!IsInCellCenter())
+            agent.stateManager.TransitionToState(StateType.GoToClosestCellCenter);
+    }
+
     protected override void HandleMovement(Vector2 movement)
     {
         if(Mathf.Abs(movement.magnitude) > 0f)
@@ -35,5 +40,15 @@ public class IdleState : State
     protected override void HandleHitted(Vector2 point)
     {
         agent.stateManager.TransitionToState(StateType.Hit);
+    }
+
+    bool IsInCellCenter()
+    {
+        bool result = Vector2Utils.CloseEnough(agent.transform.position, GridUtils.CellPositionByPosition(agent.transform.position), 0.1f);
+
+        if(!result)
+            Debug.Log($"IsInCellCenter({(Vector2)agent.transform.position}, {GridUtils.CellPositionByPosition(agent.transform.position)}) -> {result}");
+
+        return result;
     }
 }

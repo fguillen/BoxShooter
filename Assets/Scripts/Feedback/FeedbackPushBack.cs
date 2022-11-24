@@ -13,6 +13,7 @@ public class FeedbackPushBack : MonoBehaviour
         Debug.Log($"FeedbackPushBack({transform.position}, {point})");
 
         Vector2 direction = ((Vector2)transform.position - point).normalized;
+        rb2d.velocity = Vector2.zero;
         rb2d.AddForce(direction * force, ForceMode2D.Impulse);
 
         previousDrag = rb2d.drag;

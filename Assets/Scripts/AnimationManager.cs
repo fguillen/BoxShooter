@@ -46,7 +46,7 @@ public class AnimationManager : MonoBehaviour
                 break;
 
             case AnimationType.hit:
-                Play("Hit");
+                Play("Hitted");
                 break;
 
             case AnimationType.die:
@@ -66,6 +66,7 @@ public class AnimationManager : MonoBehaviour
 
     void Play(string name)
     {
+        Debug.Log($"AnimationManager.Play({name})");
         animator.Play(name, -1, 0f);
     }
 

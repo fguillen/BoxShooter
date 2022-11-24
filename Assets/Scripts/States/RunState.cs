@@ -37,7 +37,7 @@ public class RunState : State
 
     public override void StateUpdate()
     {
-        if((nextPosition - (Vector2)agent.transform.position).magnitude < 0.1f)
+        if(Vector2Utils.CloseEnough(nextPosition, agent.transform.position, 0.1f))
             NextPositionArrived();
     }
 
@@ -91,6 +91,12 @@ public class RunState : State
             // MoveToCell();
         }
     }
+
+    protected override void HandleHitted(Vector2 point)
+    {
+        agent.stateManager.TransitionToState(StateType.Hit);
+    }
+
 
     void SetNextPosition(Vector2 position)
     {

@@ -73,6 +73,7 @@ namespace AI
             Invoke("ContinueMoving", waitingTime);
         }
 
+        [ContextMenu("PlayerDetected()")]
         void PlayerDetected()
         {
             agent.agentInput.CallAttack();
