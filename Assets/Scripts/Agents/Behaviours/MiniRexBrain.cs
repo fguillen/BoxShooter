@@ -17,5 +17,13 @@ namespace AI
         {
             patrolBehaviour.Perform();
         }
+
+        [ContextMenu("Attack()")]
+        void Attack()
+        {
+            Debug.Log("Attack()");
+            agent.agentInput.CallMovement(new Vector2(-1f, 0f));
+            agent.agentInput.CallAttack();
+        }
     }
 }

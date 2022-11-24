@@ -13,6 +13,7 @@ public class MovementData : MonoBehaviour
     public Vector2 agentMovement {
         get => _agentMovement;
         set {
+            Debug.Log($"MovementData.agentMovement = {value}");
             _agentMovement = value;
             CalculateMovementLastDirection();
             CalculateMovementDirectionNormalized();

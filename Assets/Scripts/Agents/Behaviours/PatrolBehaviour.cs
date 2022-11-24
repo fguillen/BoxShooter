@@ -9,7 +9,7 @@ namespace AI
 {
     public class PatrolBehaviour : AgentBehaviour
     {
-        Vector2 currentDirection;
+        // Vector2 currentDirection;
         bool waiting = false;
         List<Vector2> directions;
 
@@ -34,13 +34,13 @@ namespace AI
         public override void Perform()
         {
             if(agent.playerInAreaSensor.HasHit())
-                PlayerDetected();
+                PlayerDetected(agent.playerInAreaSensor.hits.First().transform.position);
 
             if(waiting)
                 return;
 
-            if(agent.movementData.agentMovement != currentDirection)
-                agent.agentInput.CallMovement(currentDirection);
+            // if(agent.movementData.agentMovement != currentDirection)
+            //     agent.agentInput.CallMovement(currentDirection);
 
             if(agent.wallInFrontSensor.HasHit())
                 WallInFront();
@@ -59,7 +59,7 @@ namespace AI
                 WallInFront();
             }
             else
-                currentDirection = possibleDirections[Random.Range(0, possibleDirections.Count)];
+                agent.agentInput.CallMovement(possibleDirections[Random.Range(0, possibleDirections.Count)]);
         }
 
         void WallInFront()
@@ -73,9 +73,9 @@ namespace AI
             Invoke("ContinueMoving", waitingTime);
         }
 
-        [ContextMenu("PlayerDetected()")]
-        void PlayerDetected()
+        void PlayerDetected(Vector2 position)
         {
+            agent.agentInput.CallMovement(Vector2Utils.DirectionBetweenVectors(agent.transform.position, position));
             agent.agentInput.CallAttack();
         }
 

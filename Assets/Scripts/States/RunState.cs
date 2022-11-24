@@ -9,12 +9,12 @@ public class RunState : State
     [SerializeField] private UnityEvent OnStep;
 
     Vector2 inputDirection;
-    Vector2 notValidNextPosition = new Vector2(-100, -100);
+    Vector2 notSetNextPosition = new Vector2(-100, -100);
     Vector2 nextPosition;
 
     void Awake()
     {
-        nextPosition = notValidNextPosition;
+        nextPosition = notSetNextPosition;
     }
 
     public override StateType Type()
@@ -29,10 +29,15 @@ public class RunState : State
         if(agent.movementData.IsMoving())
             HandleMovement(agent.movementData.agentMovement);
 
-        if(nextPosition != notValidNextPosition)
+        if(nextPosition != notSetNextPosition)
             SetNextPosition(nextPosition);
 
         // MoveToCell();
+    }
+
+    protected override void ExitState()
+    {
+        nextPosition = notSetNextPosition;
     }
 
     public override void StateUpdate()
@@ -100,7 +105,7 @@ public class RunState : State
 
     void SetNextPosition(Vector2 position)
     {
-        // Debug.Log($"RunState.SetNextPosition: {position}");
+        Debug.Log($"RunState.SetNextPosition: {position}");
         nextPosition = position;
         Vector2 direction = Vector2Utils.DirectionBetweenVectors(agent.transform.position, position).normalized;
         agent.rb2d.velocity = direction * agent.agentData.maxSpeed;
