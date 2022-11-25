@@ -29,21 +29,25 @@ public class RunState : State
         if(agent.movementData.IsMoving())
             HandleMovement(agent.movementData.agentMovement);
 
+        // lat nextPosition cached
         if(nextPosition != notSetNextPosition)
             SetNextPosition(nextPosition);
 
         // MoveToCell();
     }
 
-    protected override void ExitState()
-    {
-        nextPosition = notSetNextPosition;
-    }
+    // protected override void ExitState()
+    // {
+    //     nextPosition = notSetNextPosition;
+    // }
 
     public override void StateUpdate()
     {
         if(Vector2Utils.CloseEnough(nextPosition, agent.transform.position, 0.1f))
             NextPositionArrived();
+
+        if(!agent.movementData.IsMoving() && nextPosition == notSetNextPosition)
+            agent.stateManager.TransitionToState(StateType.Idle);
     }
 
     void NextPositionArrived()
@@ -51,9 +55,7 @@ public class RunState : State
         agent.rb2d.MovePosition(nextPosition);
 
         if(agent.wallInFrontSensor.HasHit() || inputDirection.magnitude == 0f)
-        {
             agent.stateManager.TransitionToState(StateType.Idle);
-        }
         else
             HandleMovement(agent.movementData.agentMovement);
     }
@@ -99,6 +101,7 @@ public class RunState : State
 
     protected override void HandleHitted(Vector2 point)
     {
+        nextPosition = notSetNextPosition; // No cache the last nextPosition
         agent.stateManager.TransitionToState(StateType.Hit);
     }
 

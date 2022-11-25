@@ -42,7 +42,7 @@ public class MovementData : MonoBehaviour
 
     void CalculateMovementDirectionNormalized()
     {
-        movementDirectionNormalized = new Vector2(agentMovement.x, agentMovement.y).normalized;
+        movementDirectionNormalized = agentMovement.normalized;
     }
 
     public bool IsMoving()
