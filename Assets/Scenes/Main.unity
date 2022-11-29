@@ -514,14 +514,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 203424705044949988, guid: 6ce85d2ccb56e47ed8d827113ec68af7, type: 3}
-      propertyPath: m_SortingLayer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 203424705044949988, guid: 6ce85d2ccb56e47ed8d827113ec68af7, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 24980159
-      objectReference: {fileID: 0}
     - target: {fileID: 7453868682548538373, guid: 6ce85d2ccb56e47ed8d827113ec68af7, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -570,6 +562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBull
       objectReference: {fileID: 0}
+    - target: {fileID: 7453868683364468500, guid: 6ce85d2ccb56e47ed8d827113ec68af7, type: 3}
+      propertyPath: agentData
+      value: 
+      objectReference: {fileID: 11400000, guid: cb98cc38602ab44e1b096d5b475246b3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ce85d2ccb56e47ed8d827113ec68af7, type: 3}
 --- !u!1001 &85151151

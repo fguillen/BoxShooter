@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AI
 {
-    public class MiniRexBrain : AgentBrain
+    public class BullBrain : AgentBrain
     {
         [SerializeField] AgentBehaviour patrolBehaviour;
 
