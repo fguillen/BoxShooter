@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AggressivePatrol
       objectReference: {fileID: 0}
+    - target: {fileID: 533736295040102961, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
+      propertyPath: agentData
+      value: 
+      objectReference: {fileID: 11400000, guid: cb98cc38602ab44e1b096d5b475246b3, type: 2}
     - target: {fileID: 533736295859935520, guid: 69acaba1aa6654ab6a11ce5d0812da1a, type: 3}
       propertyPath: m_RootOrder
       value: 0

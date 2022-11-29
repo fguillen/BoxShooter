@@ -13,7 +13,8 @@ public class Agent : MonoBehaviour
     [HideInInspector] public GroundSensor groundSensor;
     [HideInInspector] public ClimbSensor climbSensor;
     [HideInInspector] public WallInFrontSensor wallInFrontSensor;
-    [HideInInspector] public WallInAllDirectionsSensor wallInAllDirectionsSensor;
+    [HideInInspector] public SensorInAllDirectionsSensor wallInAllDirectionsSensor;
+    [HideInInspector] public SensorInAllDirectionsSensor playerInAllDirectionsSensor;
     [HideInInspector] public PlayerInFrontSensor playerInFrontSensor;
     [HideInInspector] public PlayerInAreaSensor playerInAreaSensor;
     [HideInInspector] public EndOfGroundSensor endOfGroundSensor;
@@ -40,7 +41,8 @@ public class Agent : MonoBehaviour
         groundSensor = GetComponentInChildren<GroundSensor>();
         climbSensor = GetComponentInChildren<ClimbSensor>();
         wallInFrontSensor = GetComponentInChildren<WallInFrontSensor>();
-        wallInAllDirectionsSensor = GetComponentInChildren<WallInAllDirectionsSensor>();
+        wallInAllDirectionsSensor = transform.Find("WallInAllDirectionsSensor").GetComponent<SensorInAllDirectionsSensor>();
+        playerInAllDirectionsSensor = transform.Find("PlayerInAllDirectionsSensor").GetComponent<SensorInAllDirectionsSensor>();
         playerInFrontSensor = GetComponentInChildren<PlayerInFrontSensor>();
         playerInAreaSensor = GetComponentInChildren<PlayerInAreaSensor>();
         endOfGroundSensor = GetComponentInChildren<EndOfGroundSensor>();

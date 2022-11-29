@@ -8,13 +8,16 @@ namespace Sensors
     public class RaySensor : MonoBehaviour
     {
         [SerializeField] bool drawGizmos;
-        [SerializeField] Color gizmosColorObstacle = Color.red;
-        [SerializeField] Color gizmosColorNoObstacle = Color.blue;
+        [SerializeField] Color gizmosColorHit = Color.red;
+        [SerializeField] Color gizmosColorHitObstacle = Color.blue;
+        [SerializeField] Color gizmosColorNoHit = Color.green;
+        [SerializeField] LayerMask obstacleLayerMask;
         [SerializeField] LayerMask objectiveLayerMask;
         [SerializeField] Transform limit;
 
         public RaycastHit2D hit { get; private set; }
         bool hasHit;
+        bool hasHitObstruction;
 
         public bool HasHit()
         {
@@ -25,19 +28,25 @@ namespace Sensors
         void CheckHit()
         {
             hit =
-                Physics2D.Raycast(
+                Physics2D.Linecast(
                     transform.position,
-                    Direction(),
-                    Distance(),
-                    objectiveLayerMask
+                    limit.position,
+                    objectiveLayerMask | obstacleLayerMask
                 );
 
             if(hit.collider != null)
             {
-                // if(!hasHit)
-                //     Debug.Log($"{GetType().Name}.RaySensor Hitted - {hit.point}, {hit.transform.position}, {hit.collider.tag}, {transform.position}, {Direction()}, {Distance()}");
-
-                hasHit = true;
+                // If the hitted object is in the obstacleLayerMask return false
+                if(LayerUtils.InLayerMask(hit.collider.gameObject.layer, obstacleLayerMask))
+                {
+                    hasHit = false;
+                    hasHitObstruction = true;
+                }
+                else
+                {
+                    hasHit = true;
+                    hasHitObstruction = false;
+                }
             }
             else
             {
@@ -56,21 +65,19 @@ namespace Sensors
             CheckHit();
 
             if(hasHit)
-                Gizmos.color = gizmosColorObstacle;
+            {
+                Gizmos.color = gizmosColorHit;
+                Gizmos.DrawSphere(hit.centroid, 0.1f);
+            }
+            else if(hasHitObstruction)
+            {
+                Gizmos.color = gizmosColorHitObstacle;
+                Gizmos.DrawSphere(hit.centroid, 0.1f);
+            }
             else
-                Gizmos.color = gizmosColorNoObstacle;
+                Gizmos.color = gizmosColorNoHit;
 
             Gizmos.DrawLine(transform.position, limit.position);
-        }
-
-        Vector3 Direction()
-        {
-            return (limit.position - transform.position).normalized;
-        }
-
-        float Distance()
-        {
-            return Mathf.Abs((transform.position - limit.position).magnitude);
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Sensors
 {
-    public class WallInAllDirectionsSensor : SensorInAllDirectionsSensor
+    public class PlayerInAllDirectionsSensor : SensorInAllDirectionsSensor
     {
     }
 }

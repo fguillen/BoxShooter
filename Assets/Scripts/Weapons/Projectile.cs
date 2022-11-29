@@ -43,7 +43,7 @@ namespace WeaponSystem
 
             if(
                 collider.gameObject != agent.damageManager.gameObject &&
-                Utils.InLayerMask(collider.gameObject.layer, data.hittableMask)
+                LayerUtils.InLayerMask(collider.gameObject.layer, data.hittableMask)
             )
                 Hit(collider);
         }
