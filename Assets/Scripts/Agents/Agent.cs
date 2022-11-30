@@ -34,26 +34,26 @@ public class Agent : MonoBehaviour
 
     void Awake()
     {
-        rb2d = GetComponent<Rigidbody2D>();
+        rb2d = this.GetComponentThrowIfNotFound<Rigidbody2D>();
         agentInput = GetComponentInParent<AgentInput>();
-        animationManager = GetComponentInChildren<AnimationManager>();
-        spriteFlipper = GetComponentInChildren<SpriteFlipper>();
-        groundSensor = GetComponentInChildren<GroundSensor>();
-        climbSensor = GetComponentInChildren<ClimbSensor>();
-        wallInFrontSensor = GetComponentInChildren<WallInFrontSensor>();
-        wallInAllDirectionsSensor = transform.Find("WallInAllDirectionsSensor").GetComponent<SensorInAllDirectionsSensor>();
-        playerInAllDirectionsSensor = transform.Find("PlayerInAllDirectionsSensor").GetComponent<SensorInAllDirectionsSensor>();
-        playerInFrontSensor = GetComponentInChildren<PlayerInFrontSensor>();
-        playerInAreaSensor = GetComponentInChildren<PlayerInAreaSensor>();
-        endOfGroundSensor = GetComponentInChildren<EndOfGroundSensor>();
+        animationManager = this.GetComponentInChildrenThrowIfNotFound<AnimationManager>();
+        spriteFlipper = this.GetComponentInChildrenThrowIfNotFound<SpriteFlipper>();
+        // groundSensor = this.GetComponentInChildrenThrowIfNotFound<GroundSensor>();
+        // climbSensor = this.GetComponentInChildrenThrowIfNotFound<ClimbSensor>();
+        wallInFrontSensor = this.GetComponentInChildrenThrowIfNotFound<WallInFrontSensor>();
+        wallInAllDirectionsSensor = transform.Find("Sensors/WallInAllDirections").gameObject.GetComponentThrowIfNotFound<SensorInAllDirectionsSensor>();
+        playerInAllDirectionsSensor = transform.Find("Sensors/PlayerInAllDirections").gameObject.GetComponentThrowIfNotFound<SensorInAllDirectionsSensor>();
+        playerInFrontSensor = this.GetComponentInChildrenThrowIfNotFound<PlayerInFrontSensor>();
+        playerInAreaSensor = this.GetComponentInChildrenThrowIfNotFound<PlayerInAreaSensor>();
+        // endOfGroundSensor = this.GetComponentInChildrenThrowIfNotFound<EndOfGroundSensor>();
 
         rotatorsTowardsDirection = GetComponentsInChildren<RotatorTowardsDirection>().ToList();
 
-        weaponManager = GetComponentInChildren<WeaponManager>();
-        stateManager = GetComponentInChildren<StateManager>();
-        damageManager = GetComponentInChildren<DamageManager>();
-        pointsManager = GetComponentInChildren<PointsManager>();
-        respawnManager = GetComponentInChildren<RespawnManager>();
+        weaponManager = this.GetComponentInChildrenThrowIfNotFound<WeaponManager>();
+        stateManager = this.GetComponentInChildrenThrowIfNotFound<StateManager>();
+        damageManager = this.GetComponentInChildrenThrowIfNotFound<DamageManager>();
+        pointsManager = this.GetComponentInChildrenThrowIfNotFound<PointsManager>();
+        // respawnManager = this.GetComponentInChildrenThrowIfNotFound<RespawnManager>();
     }
 
     // Start is called before the first frame update
