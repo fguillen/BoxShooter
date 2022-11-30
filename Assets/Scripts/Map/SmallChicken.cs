@@ -11,12 +11,15 @@ public class SmallChicken : MonoBehaviour
     House house;
     Sequence sequence;
     Collider2D theCollider;
+    bool goingHome = false;
+    SpiralMovement spiralMovement;
 
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         house = FindObjectOfType<House>();
         theCollider = GetComponent<Collider2D>();
+        spiralMovement = this.GetComponentThrowIfNotFound<SpiralMovement>();
     }
 
     void Start()
@@ -27,17 +30,19 @@ public class SmallChicken : MonoBehaviour
     public void GoToHouse()
     {
         Debug.Log("SmallChicken.GoToHouse()");
+        goingHome = true;
 
         animator.Play("Fly", -1, 0f);
-        theCollider.enabled = false;
 
-        if(sequence != null)
-            sequence.Kill();
+        spiralMovement.enabled = true;
+        spiralMovement.destiny = house.transform;
+    }
 
-        sequence = DOTween.Sequence();
-        sequence.Append(transform.DOMoveX(house.transform.position.x, speed).SetSpeedBased());
-        sequence.Append(transform.DOMoveY(house.transform.position.y, speed).SetSpeedBased());
-        sequence.OnComplete(OpenHouse);
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log($"SmallChicken.OnTriggerEnter2D({other.tag})");
+        if(other.CompareTag("Door"))
+            OpenHouse();
     }
 
     void OpenHouse()
