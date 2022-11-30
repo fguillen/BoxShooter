@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class SmallChicken : MonoBehaviour
 {
-    [SerializeField] float speed = 2f;
-
     Animator animator;
-    House house;
+    Door door;
     Sequence sequence;
     Collider2D theCollider;
     bool goingHome = false;
@@ -17,7 +15,7 @@ public class SmallChicken : MonoBehaviour
     void Awake()
     {
         animator = GetComponentInChildren<Animator>();
-        house = FindObjectOfType<House>();
+        door = FindObjectOfType<Door>();
         theCollider = GetComponent<Collider2D>();
         spiralMovement = this.GetComponentThrowIfNotFound<SpiralMovement>();
     }
@@ -27,31 +25,35 @@ public class SmallChicken : MonoBehaviour
         animator.Play("Idle", -1, 0f);
     }
 
-    public void GoToHouse()
+    public void GoToDoor()
     {
-        Debug.Log("SmallChicken.GoToHouse()");
+        Debug.Log("SmallChicken.GoToDoor()");
+
+        if(goingHome)
+            return;
+
         goingHome = true;
 
         animator.Play("Fly", -1, 0f);
 
         spiralMovement.enabled = true;
-        spiralMovement.destiny = house.transform;
+        spiralMovement.destiny = door.transform;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"SmallChicken.OnTriggerEnter2D({other.tag})");
         if(other.CompareTag("Door"))
-            OpenHouse();
+            OpenDoor();
     }
 
-    void OpenHouse()
+    void OpenDoor()
     {
-        Debug.Log("SmallChicken.OpenHouse()");
+        Debug.Log("SmallChicken.OpenDoor()");
         if(sequence != null)
             sequence.Kill();
 
-        house.GetKey();
+        door.GetKey();
         Destroy(gameObject);
     }
 }

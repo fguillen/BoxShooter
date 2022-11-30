@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class House : MonoBehaviour
+public class DoorDelete : MonoBehaviour
 {
     [SerializeField] List<Sprite> sprites;
     [SerializeField] public UnityEvent OnPlayerInDoor;
