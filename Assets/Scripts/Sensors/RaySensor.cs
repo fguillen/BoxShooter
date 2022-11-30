@@ -46,6 +46,7 @@ namespace Sensors
                 {
                     hasHit = true;
                     hasHitObstruction = false;
+                    // Debug.Log($"Collision with: {hit.collider.gameObject.name}");
                 }
             }
             else

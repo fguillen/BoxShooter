@@ -9,8 +9,8 @@ namespace AI
 {
     public class AggressivePatrolBehaviour : AgentBehaviour
     {
-        // Vector2 currentDirection;
         bool waiting = false;
+        bool charging = false;
         List<Vector2> directions;
         Vector2 cellDestinationPosition;
 
@@ -35,20 +35,36 @@ namespace AI
 
         public override void Perform()
         {
+            CheckIfPlayerIsBiteable();
+
+            if(!charging)
+                CheckIfPlayerIsVisible();
+
+            if(!waiting)
+                CheckIfDestinationArrived();
+        }
+
+        private void CheckIfDestinationArrived()
+        {
+            if(
+                Vector2Utils.CloseEnough(agent.transform.position, cellDestinationPosition, 0.05f) ||
+                agent.wallInFrontSensor.HasHit()
+            )
+                DestinationArrived();
+        }
+
+        private void CheckIfPlayerIsBiteable()
+        {
             if(agent.playerInAreaSensor.HasHit())
-                PlayerDetected(agent.playerInAreaSensor.hits.First().transform.position);
+                AttackPlayer(agent.playerInAreaSensor.hits.First().transform.position);
+        }
 
-            if(waiting)
-                return;
+        void CheckIfPlayerIsVisible()
+        {
+            List<Vector2> hits = agent.playerInAllDirectionsSensor.GetDirectionsWithHit();
 
-            // if(agent.movementData.agentMovement != currentDirection)
-            //     agent.agentInput.CallMovement(currentDirection);
-
-            if(Vector2Utils.CloseEnough(agent.transform.position, cellDestinationPosition, 0.05f))
-                DestinationArrived();
-
-            if(agent.wallInFrontSensor.HasHit())
-                DestinationArrived();
+            if(hits.Count() > 0)
+                ChargePlayer(hits.First());
         }
 
         void ChangeCurrentDirection()
@@ -70,24 +86,37 @@ namespace AI
         void DestinationArrived()
         {
             // Debug.Log($"DestinationArrived()");
+            charging = false;
             agent.transform.position = GridUtils.CellPositionByPosition(agent.transform.position); // Center in Cell
             waiting = true;
             agent.agentInput.CallMovement(Vector2.zero);
             float waitingTime = Random.Range(0f, agent.agentData.waitingTimeMax);
+            cellDestinationPosition = agent.transform.position;
             // Debug.Log($"DestinationArrived().waitingTime: {waitingTime}");
 
             Invoke("ContinueMoving", waitingTime);
         }
 
-        void PlayerDetected(Vector2 position)
+        void ChargePlayer(Vector2 direction)
         {
-            agent.agentInput.CallMovement(Vector2Utils.DirectionBetweenVectors(agent.transform.position, position));
+            charging = true;
+            waiting = false;
+            agent.agentInput.CallMovement(direction);
+        }
+
+        void AttackPlayer(Vector2 position)
+        {
+            agent.agentInput.CallMovement(Vector2Utils.DirectionBetweenVectorsDiscrete(agent.transform.position, position));
             agent.agentInput.CallAttack();
         }
 
         void ContinueMoving()
         {
             // Debug.Log("ContinueMoving");
+
+            if(charging)
+                return;
+
             waiting = false;
             ChangeCurrentDirection();
             SetCellDestinationPosition();

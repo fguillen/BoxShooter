@@ -32,6 +32,11 @@ public static class Vector2Utils
         return result;
     }
 
+    public static Vector2 DirectionBetweenVectorsDiscrete(Vector2 position1, Vector2 position2)
+    {
+        return DirectionDiscrete(DirectionBetweenVectors(position1, position2));
+    }
+
     public static Vector2 DirectionDiscrete(Vector2 direction)
     {
         direction = direction.normalized;
