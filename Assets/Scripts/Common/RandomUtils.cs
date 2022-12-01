@@ -15,4 +15,14 @@ public static class RandomUtils
 
         return result;
     }
+
+    public static T RandomBetween2Values<T>(T value1, T value2)
+    {
+        return Random.Range(0, 1) == 0 ? value1 : value2;
+    }
+
+    public static float AddRandomOffset(float value, float offsetLimit)
+    {
+        return value + Random.Range(-offsetLimit, +offsetLimit);
+    }
 }

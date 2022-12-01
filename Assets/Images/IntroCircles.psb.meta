@@ -1,0 +1,495 @@
+fileFormatVersion: 2
+guid: 1ffb38a8fd569473f96c81bbe89cb2bc
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMasterTextureLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: IntroCircle_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 14693
+      width: 900
+      height: 657
+    spriteID: e5f55f0d210d04e3db95c67b5fd2f2d5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2208, y: 13005}
+  - name: IntroCircle_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 13678
+      width: 1318
+      height: 1007
+    spriteID: 490a5dd3e62684177bbced336e5f5ab9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -2001, y: 12201}
+  - name: IntroCircle_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 12277
+      width: 1657
+      height: 1393
+    spriteID: 580131b466bf84be180aecabbcbfc025
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1832, y: 11048}
+  - name: IntroCircle_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 10664
+      width: 1896
+      height: 1605
+    spriteID: c15c60e71379840da9f3d4a05a0708c9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1684, y: 9517}
+  - name: IntroCircle_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5300
+      y: 2195
+      width: 2038
+      height: 1717
+    spriteID: 2dd2bc1f6f4f44995b911e349a12cda3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3701, y: 1114}
+  - name: IntroCircle_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5300
+      y: 4
+      width: 2743
+      height: 2183
+    spriteID: 753ab4482241b41eda820e397c3e92ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4143, y: -821}
+  - name: IntroCircle_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4434
+      y: 4080
+      width: 3416
+      height: 2560
+    spriteID: ea6e311c65be74d55bdedda3cb6d7885
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3446, y: 3384}
+  - name: IntroCircle_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 7579
+      width: 3927
+      height: 3077
+    spriteID: f0800020cd1734036a520c84b03bbfb6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -691, y: 7079}
+  - name: IntroCircle_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4080
+      width: 4422
+      height: 3491
+    spriteID: bbe3e5da735aa44838ca698befacb73e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -469, y: 3803}
+  - name: IntroCircle_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 5288
+      height: 4068
+    spriteID: 7eab2c5878d334434a936f73850a85a9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: IntroCircle
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 9f1d52b29dd0c4533b84640b8f8fcf95
+    layerID: 12
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: IntroCircle_1
+    spriteName: IntroCircle_1
+    isGroup: 0
+    parentIndex: 0
+    spriteID: e5f55f0d210d04e3db95c67b5fd2f2d5
+    layerID: 11
+    mosaicPosition: {x: 4, y: 14693}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: IntroCircle_2
+    spriteName: IntroCircle_2
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 490a5dd3e62684177bbced336e5f5ab9
+    layerID: 10
+    mosaicPosition: {x: 4, y: 13678}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: IntroCircle_3
+    spriteName: IntroCircle_3
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 580131b466bf84be180aecabbcbfc025
+    layerID: 9
+    mosaicPosition: {x: 4, y: 12277}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: IntroCircle_4
+    spriteName: IntroCircle_4
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c15c60e71379840da9f3d4a05a0708c9
+    layerID: 8
+    mosaicPosition: {x: 4, y: 10664}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: IntroCircle_5
+    spriteName: IntroCircle_5
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 2dd2bc1f6f4f44995b911e349a12cda3
+    layerID: 7
+    mosaicPosition: {x: 5300, y: 2195}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: IntroCircle_6
+    spriteName: IntroCircle_6
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 753ab4482241b41eda820e397c3e92ae
+    layerID: 6
+    mosaicPosition: {x: 5300, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: IntroCircle_7
+    spriteName: IntroCircle_7
+    isGroup: 0
+    parentIndex: 0
+    spriteID: ea6e311c65be74d55bdedda3cb6d7885
+    layerID: 5
+    mosaicPosition: {x: 4434, y: 4080}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: IntroCircle_8
+    spriteName: IntroCircle_8
+    isGroup: 0
+    parentIndex: 0
+    spriteID: f0800020cd1734036a520c84b03bbfb6
+    layerID: 4
+    mosaicPosition: {x: 4, y: 7579}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: IntroCircle_9
+    spriteName: IntroCircle_9
+    isGroup: 0
+    parentIndex: 0
+    spriteID: bbe3e5da735aa44838ca698befacb73e
+    layerID: 3
+    mosaicPosition: {x: 4, y: 4080}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: IntroCircle_10
+    spriteName: IntroCircle_10
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7eab2c5878d334434a936f73850a85a9
+    layerID: 2
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []
